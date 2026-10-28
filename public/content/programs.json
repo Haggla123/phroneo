@@ -1,0 +1,122 @@
+{
+  "_note": "PHRONEO Programs - Can be edited via /admin or directly in this file.",
+  "programs": [
+    {
+      "slug": "renew",
+      "image": "/images/program-renew.jpg",
+      "start": "2027-02-06",
+      "format": {
+        "de": "Präsenz · Samstags (6 Wochen)",
+        "en": "In person · Saturdays (6 weeks)"
+      },
+      "place": {
+        "de": "Frankfurt am Main & Campus Loft",
+        "en": "Frankfurt am Main & Campus Loft"
+      },
+      "title": {
+        "de": "Renew – Mindset & Glaube",
+        "en": "Renew – Mindset & Faith"
+      },
+      "summary": {
+        "de": "Sechs Wochen, um Denkmuster im Licht des Glaubens zu hinterfragen und nachhaltig zu erneuern.",
+        "en": "Six weeks to examine thought patterns in the light of faith and experience lasting mental renewal."
+      },
+      "description": {
+        "de": "In diesem intensiven sechswöchigen Programm reflektieren wir Gewohnheiten, limitierende Glaubenssätze und emotionale Reaktionen anhand biblischer Prinzipien (Römer 12,2) und moderner Reflexionsmethoden. Gemeinsam erarbeiten wir alltagstaugliche Denkgewohnheiten, die dich im Studium, Beruf und Glaubensleben beflügeln.",
+        "en": "In this intensive six-week cohort, we examine habits, limiting beliefs, and emotional reactions through the lens of biblical wisdom (Romans 12:2) and practical cognitive tools. Together we build sustainable thought habits that support you in university, career, and personal faith."
+      },
+      "outcomes": {
+        "de": [
+          "Fundierte Klarheit über eigene Denk- und Verhaltensmuster",
+          "Konkrete tägliche Routinen für mentale & geistliche Stärke",
+          "Tiefe Gemeinschaft und ehrlicher Austausch auf Augenhöhe",
+          "Persönliches Workbook mit Impulsen und Reflexionsfragen"
+        ],
+        "en": [
+          "Grounded clarity about your thought and emotional patterns",
+          "Actionable daily routines for mental and spiritual resilience",
+          "Deep fellowship and honest peer-level encouragement",
+          "Personal workbook with curated reflections and exercises"
+        ]
+      }
+    },
+    {
+      "slug": "purpose",
+      "image": "/images/program-purpose.jpg",
+      "start": "2027-03-20",
+      "format": {
+        "de": "Online-Kohorte · Donnerstags",
+        "en": "Online Cohort · Thursdays"
+      },
+      "place": {
+        "de": "Interaktives Video & 1-on-1 Mentoring",
+        "en": "Interactive Video & 1-on-1 Mentoring"
+      },
+      "title": {
+        "de": "Purpose – Berufung & Identität",
+        "en": "Purpose – Calling & Identity"
+      },
+      "summary": {
+        "de": "Entdecke deine Gaben, kläre deine Werte und gewinne Richtung für Studium, Karriere und Lebensweg.",
+        "en": "Discover your gifts, clarify your core values, and gain clarity for career, university, and life decisions."
+      },
+      "description": {
+        "de": "Wo will ich hin? Welche Talente und Werte hat Gott mir anvertraut? Im Purpose-Programm verbinden wir zielgerichtete Selbstreflexion mit christlicher Berufungsethik. Jeder Teilnehmer wird von einem erfahrenen christlichen Mentor begleitet, um wichtige Entscheidungen mit Zuversicht zu treffen.",
+        "en": "Where am I headed? What unique strengths and gifts has God entrusted to me? In the Purpose Program, we unite focused vocational discovery with Christian calling. Each participant is paired with an experienced Christian mentor to navigate major life decisions with clarity and peace."
+      },
+      "outcomes": {
+        "de": [
+          "Ein klares persönliches Stärken- und Werteprofil",
+          "1-on-1 Mentoring-Gespräche mit erfahrenen Fach- und Führungskräften",
+          "Einen 12-Monats-Fahrplan für nächste berufliche und persönliche Meilensteine",
+          "Entscheidungskompetenz frei von vergleichendem Druck"
+        ],
+        "en": [
+          "A clear personal strengths and values blueprint",
+          "1-on-1 mentoring sessions with seasoned Christian professionals",
+          "A 12-month roadmap for upcoming career and personal milestones",
+          "Confidence in decision-making free from peer comparison"
+        ]
+      }
+    },
+    {
+      "slug": "community",
+      "image": "/images/program-community.jpg",
+      "start": "2027-05-08",
+      "format": {
+        "de": "Wochenend-Retreat & Natur",
+        "en": "Weekend Retreat & Nature"
+      },
+      "place": {
+        "de": "Tagungshaus Taunus (bei Frankfurt)",
+        "en": "Taunus Nature Retreat (near Frankfurt)"
+      },
+      "title": {
+        "de": "Together – Gemeinschaft & Einkehr",
+        "en": "Together – Living Community Retreat"
+      },
+      "summary": {
+        "de": "Ein intensives Wochenende für echte Begegnung, geistliches Auftanken und lebenslange Freundschaften.",
+        "en": "An intensive weekend retreat for authentic connection, spiritual refreshment, and lifelong friendships."
+      },
+      "description": {
+        "de": "Ein Wochenende raus aus dem Alltagslärm: Tiefgehende Workshops, Lagerfeuergespräche, gemeinsame Wanderungen, Worship und Zeiten des Gebets. Hier triffst du andere junge Erwachsene, die deine Werte teilen und gemeinsam wachsen wollen.",
+        "en": "Step away from daily noise for a refreshing weekend: in-depth workshops, fireside conversations, hikes in nature, worship, and dedicated prayer. Connect with fellow young adults who share your faith and passion for purposeful growth."
+      },
+      "outcomes": {
+        "de": [
+          "Echtes Durchatmen und geistliche Erfrischung fernab von Alltagshektik",
+          "Ehrliche, belastbare Freundschaften und Peer-Netzwerk",
+          "Praktische Workshops zu Beziehungen, Glaubensmut und Resilienz",
+          "Vollverpflegung und Übernachtung im gemütlichen Tagungshaus"
+        ],
+        "en": [
+          "Spiritual rest and intentional pause away from fast-paced routines",
+          "Honest, authentic peer community and ongoing encouragement",
+          "Hands-on workshops on relationships, spiritual courage, and resilience",
+          "Full board and comfortable lodging included"
+        ]
+      }
+    }
+  ]
+}

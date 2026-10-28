@@ -1,0 +1,33 @@
+# Decap CMS Configuration
+# For local editing: run `npx decap-server` and open /admin/index.html
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: content
+    label: Inhalte
+    files:
+      - name: programs
+        label: Programme
+        file: public/content/programs.json
+        fields:
+          - label: Programme
+            name: programs
+            widget: list
+            summary: "{{fields.title.de}}"
+            fields:
+              - {label: Slug (URL), name: slug, widget: string}
+              - {label: Startdatum, name: start, widget: string, hint: "YYYY-MM-DD"}
+              - {label: Bild, name: image, widget: image, required: false}
+              - {label: Titel, name: title, widget: object, fields: [{label: DE, name: de, widget: string}, {label: EN, name: en, widget: string}]}
+              - {label: Kurzbeschreibung, name: summary, widget: object, fields: [{label: DE, name: de, widget: text}, {label: EN, name: en, widget: text}]}
+              - {label: Beschreibung, name: description, widget: object, fields: [{label: DE, name: de, widget: text}, {label: EN, name: en, widget: text}]}
+              - {label: Format, name: format, widget: object, fields: [{label: DE, name: de, widget: string}, {label: EN, name: en, widget: string}]}
+              - {label: Ort, name: place, widget: object, fields: [{label: DE, name: de, widget: string}, {label: EN, name: en, widget: string}]}
+              - {label: Ergebnisse, name: outcomes, widget: object, fields: [{label: DE, name: de, widget: list}, {label: EN, name: en, widget: list}]}
