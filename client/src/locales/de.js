@@ -18,6 +18,8 @@ export default {
   },
   footer: {
     blurb: 'Erneuere deinen Verstand. Verändere dein Leben. Eine Initiative für junge Erwachsene von 18 bis 30.',
+    tagline: 'Tiefer denken. Höher leben.',
+    verse: 'Römer 12,2 · Erneuere deinen Verstand.',
     privacy: 'Datenschutz',
     imprint: 'Impressum',
     rights: 'Alle Rechte vorbehalten.',
@@ -91,6 +93,18 @@ export default {
     storyTitle: 'Unsere Geschichte & Mission',
     storyText1: 'Junge Erwachsene zwischen 18 und 30 stehen an entscheidenden Weichenstellungen ihres Lebens: Studienwahl, erster Karriereschritt, Partnerschaft, Glaubenszweifel und Identitätssuche. Inmitten ständiger digitaler Reizüberflutung und gesellschaftlicher Leistungsnormen fehlt oft ein geschützter Raum für tiefgehende geistliche und mentale Orientierung.',
     storyText2: 'PHRONEO entstand aus dem Wunsch, genau diesen Raum zu schaffen: eine Verbindung aus geistlicher Tiefe, bewusster Denkerneuerung nach Römer 12,2 und lebensnaher Praxis. Wir glauben, dass eine Generation, die ihr Denken in Christus verankert, die Zukunft positiv prägen wird.',
+    founderKick: 'Gründer & Initiator',
+    founderTitle: 'Über Topmanie Izuwa',
+    founderSubtitle: 'Theologiestudent & Initiator des PHRONEO Project',
+    founderP1: 'Mein Name ist Topmanie Izuwa. Ich bin Theologiestudent und engagiere mich mit Leidenschaft für die persönliche, geistliche und soziale Entwicklung junger Menschen.',
+    founderP2: 'Durch meine mehrjährige Erfahrung in der sozialen Arbeit, der Jugendbegleitung und der christlichen Gemeindearbeit durfte ich Menschen in unterschiedlichen Lebenssituationen begleiten, fördern und unterstützen.',
+    founderP3: 'Seit vier Jahren leite ich die christliche Bewegung Make Room for the Lord, mit der Vision, Menschen näher zu Jesus Christus zu führen und insbesondere die junge Generation im Glauben zu stärken.',
+    founderP4: 'Mit PHRONEO Project möchte ich diese Leidenschaft weitertragen und einen Raum schaffen, in dem Menschen geistlich wachsen, ihre Persönlichkeit entwickeln und ihr Potenzial entfalten können. Mein Herz ist es, Glaube und praktische Lebensentwicklung miteinander zu verbinden und Menschen dabei zu helfen, ein bewusstes, zielgerichtetes und von christlichen Werten geprägtes Leben zu führen.',
+    missionAlt: 'PHRONEO Mission & Geist',
+    missionNote: 'PHRONEO Studium & Mission',
+    founderAlt: 'Topmanie Izuwa',
+    teamAlt: 'PHRONEO Leitungsteam & Mentoren',
+    teamNote: 'PHRONEO Team-Porträt',
     sTitle: 'Unsere Grundwerte',
     s: [
       {
@@ -109,6 +123,13 @@ export default {
     teamTitle: 'Das Leitungsteam & Mentoren',
     teamLead: 'Engagierte Menschen, die mit Herz und Fachkompetenz junge Erwachsene begleiten.',
     team: [
+      {
+        name: 'Topmanie Izuwa',
+        role: 'Gründer & Initiator',
+        image: '/images/topmanie-izuwa.jpg',
+        featured: true,
+        bio: 'Theologiestudent, Gründer des PHRONEO Project und Leiter von Make Room for the Lord. Engagiert sich leidenschaftlich dafür, christlichen Glauben mit praktischer Lebensentwicklung zu verbinden und junge Menschen zu stärken.'
+      },
       {
         name: 'Miriam Weber',
         role: 'Initiatorin & Programmleitung',
@@ -141,31 +162,16 @@ export default {
     signup: 'Für dieses Programm anmelden',
     notFound: 'Programm nicht gefunden',
     cohortBadge: 'Kohorte 2027',
+    facts: 'Eckdaten',
     applyDeadline: 'Anmeldefrist: 14 Tage vor Beginn'
   },
   stories: {
+    loading: 'Freigegebene Erfahrungsberichte werden geladen …',
+    loadError: 'Erfahrungsberichte können gerade nicht geladen werden.',
+    emptyNotice: 'Wir bereiten freigegebene Erfahrungsberichte vor. Bitte schau später wieder vorbei.',
     h1: 'Erfahrungen & Gemeinschaft',
-    lead: 'Echte Geschichten junger Erwachsener, deren Denken und Lebensweg durch PHRONEO nachhaltig verändert wurden.',
-    items: [
-      {
-        name: 'Sarah M. (23)',
-        role: 'Medizinstudentin, Frankfurt',
-        quote: '„Durch das Renew-Programm habe ich verstanden, wie sehr mein Selbstwert an Noten und Leistung hing. Römer 12,2 ist für mich vom Bibelvers zur täglichen Befreiung geworden.“',
-        program: 'Renew 2026'
-      },
-      {
-        name: 'Lukas B. (27)',
-        role: 'Softwareentwickler, Darmstadt',
-        quote: '„Das Purpose-Mentoring hat mir geholfen, meine berufliche Laufbahn nicht aus Angst oder Vergleich zu planen, sondern mit echtem Sinn und Gelassenheit vor Gott.“',
-        program: 'Purpose 2026'
-      },
-      {
-        name: 'Elena K. (21)',
-        role: 'Auszubildende Medienkauffrau, Mainz',
-        quote: '„Das Together-Retreat war der erste Ort, an dem ich offen über Glaubenszweifel und mentale Gesundheit sprechen konnte, ohne verurteilt zu werden.“',
-        program: 'Together Retreat 2026'
-      }
-    ],
+    lead: 'Wir bereiten Erfahrungsberichte zur Veröffentlichung vor. Schau bald wieder vorbei, um mehr über die Gemeinschaft zu erfahren.',
+    items: [],
     ctaTitle: 'Schreibe dein eigenes Kapitel',
     ctaText: 'Werde Teil einer wachsenden Gemeinschaft, die sich gegenseitig stärkt.',
     ctaBtn: 'Jetzt anmelden'
@@ -209,24 +215,31 @@ export default {
     h1: 'PHRONEO unterstützen',
     lead: 'Hilf mit, jungen Erwachsenen Zugang zu lebensverändernden Programmen, Mentoring und Gemeinschaft zu ermöglichen.',
     introTitle: 'Investiere in die nächste Generation',
-    introText: 'Als gemeinnützige Initiative möchten wir sicherstellen, dass die Teilnahme an PHRONEO niemals an den finanziellen Möglichkeiten eines Studenten oder Auszubildenden scheitert. Deine Spende finanziert Stipendien, Mentoring-Ressourcen und professionelle Begleitung.',
+    introText: 'Wir möchten jungen Erwachsenen Zugang zu Programmen, Mentoring und Gemeinschaft ermöglichen. Wenn du PHRONEO unterstützen möchtest, besprechen wir gerne mit dir die aktuellen Möglichkeiten.',
     waysTitle: 'Möglichkeiten der Unterstützung',
     ways: [
       {
         title: 'Stipendien-Pate werden',
-        desc: 'Mit einer einmaligen Spende von 150 € ermöglichst du einem jungen Erwachsenen die vollständige Teilnahme an einem mehrwöchigen Programm inklusive Materialien.'
+        desc: 'Deine Unterstützung kann jungen Erwachsenen den Zugang zu Programmen erleichtern. Kontaktiere uns, um die aktuellen Möglichkeiten zu besprechen.'
       },
       {
         title: 'Monatlicher Förderer',
-        desc: 'Eine regelmäßige Partnerschaft (z. B. 25 €, 50 € oder 100 € monatlich) schenkt uns Planungssicherheit für Raummieten, Mentorentrainings und Ausbau der Angebote.'
+        desc: 'Regelmäßige Unterstützung kann uns helfen, Programme und Mentoring langfristig zu planen. Kontaktiere uns für ein persönliches Gespräch.'
       },
       {
         title: 'Mentor / Experte einbringen',
         desc: 'Du hast Berufs- und Lebenserfahrung und möchtest ehrenamtlich junge Menschen im Glauben und Beruf begleiten? Kontaktiere uns für unser Mentoren-Netzwerk.'
       }
     ],
-    bankTitle: 'Spendenkonto (Deutschland)',
-    taxNotice: 'Spenden an PHRONEO sind in Deutschland steuerlich abzugsfähig. Eine Zuwendungsbestätigung wird bei Angabe der vollständigen Adresse unaufgefordert ausgestellt.'
+    bankTitle: 'Unterstützung anfragen',
+    taxNotice: 'Bitte kontaktiere uns, um aktuelle Informationen zur Unterstützung und zu möglichen Spendenbescheinigungen zu erhalten.',
+    contactForGiving: 'Kontakt aufnehmen',
+    option: 'Option',
+    bankKick: 'Spenden & Fördern',
+    recipientLabel: 'Empfänger / Kontoinhaber',
+    bicLabel: 'BIC / SWIFT',
+    purposeLabel: 'Verwendungszweck',
+    purposeText: 'Spende PHRONEO / Name'
   },
   join: {
     h1: 'Dein Weg zu persönlichem Wachstum beginnt hier.',
@@ -297,7 +310,7 @@ export default {
       },
       {
         q: 'Was kostet die Teilnahme an den Programmen?',
-        a: 'Wir halten die Teilnahmebeiträge dank Spendern bewusst niedrig (z. B. 60–120 € für mehrwöchige Programme inkl. Material). Niemand soll aus finanziellen Gründen abgewiesen werden – sprich uns einfach auf ein Stipendium an.'
+        a: 'Teilnahmebeiträge und mögliche finanzielle Unterstützung hängen vom jeweiligen Programm ab. Kontaktiere uns vor deiner Anmeldung für aktuelle Informationen.'
       },
       {
         q: 'Wo finden die Präsenzprogramme und Retreats statt?',
@@ -315,7 +328,9 @@ export default {
   },
   privacy: {
     h1: 'Datenschutzerklärung',
-    warn: 'Entwurf der Datenschutzhinweise: Diese Seite muss vor dem Start geprüft und vervollständigt werden.',
+    warn: 'Entwurf rechtlicher Informationen: Eine Admin-Person muss diese Seite vor der Veröffentlichung vervollständigen und prüfen.',
+    loading: 'Rechtliche Informationen werden geladen …',
+    loadError: 'Rechtliche Informationen können gerade nicht geladen werden.',
     s: [
       '1. Verantwortliche Stelle für die Datenverarbeitung',
       '2. Erhebung und Speicherung personenbezogener Daten (Kontakt- und Anmeldeformulare)',
@@ -329,8 +344,8 @@ export default {
   },
   imprint: {
     h1: 'Impressum',
-    warn: 'Gesetzliche Anbieterkennzeichnung nach § 5 DDG und § 18 Abs. 2 MStV.',
-    missing: '[Wird über Admin / Konfiguration hinterlegt]',
+    warn: 'Entwurf des Impressums: Eine Admin-Person muss diese Angaben vor der Veröffentlichung vervollständigen und prüfen.',
+    missing: '[Von einer Admin-Person zu ergänzen]',
     f: {
       name: 'Name des Anbieters / Trägerkreis',
       form: 'Rechtsform',
@@ -345,11 +360,16 @@ export default {
     }
   },
   admin: {
+    navStories: 'Erfahrungsberichte', edit: 'Bearbeiten', delete: 'Löschen',
+    storiesHeading: 'Redaktion für Erfahrungsberichte', storiesIntro: 'Erfahrungsberichte auf Deutsch und Englisch verfassen. Nur veröffentlichen, wenn die ausdrückliche Zustimmung vorliegt.',
+    storiesLoadFailed: 'Erfahrungsberichte konnten nicht geladen werden.', storySaveFailed: 'Der Erfahrungsbericht konnte nicht gespeichert werden.', storySaved: 'Erfahrungsbericht gespeichert.', storyAdd: 'Bericht hinzufügen', storyEdit: 'Bericht bearbeiten', storyDisplayName: 'Anzeigename', storyRole: 'Rolle oder Beschreibung', storyProgram: 'Programm', storyQuote: 'Zitat', storyConsent: 'Ich bestätige, dass die Person der Veröffentlichung ausdrücklich zugestimmt hat.', storyConsentRequired: 'Bitte vor dem Speichern die ausdrückliche Zustimmung bestätigen.', storyPublish: 'Auf der Website veröffentlichen', storyPublished: 'Veröffentlicht', storyDraft: 'Entwurf', storyList: 'Alle Erfahrungsberichte', storyNone: 'Noch keine Erfahrungsberichte vorhanden.', storyDeleteConfirm: 'Diesen Erfahrungsbericht löschen?',
+    legalLoadFailed: 'Rechtliche Seiten konnten nicht geladen werden.', legalSaved: 'Rechtliche Seiten gespeichert.', legalApproved: 'Als geprüft und veröffentlichungsbereit markiert.', legalDraft: 'Entwurf: Vor der Prüfung erscheint auf der Seite ein Entwurfshinweis.', imprintApproval: 'Ich bestätige, dass die Impressumsangaben vollständig und geprüft sind.', privacyApproval: 'Ich bestätige, dass beide Sprachversionen der Datenschutzerklärung vollständig und geprüft sind.', privacyPolicyLanguage: 'Text der Datenschutzerklärung ({{language}})', privacyApprovalIncomplete: 'Vervollständige beide Sprachversionen und entferne offene Platzhalter, bevor du die Erklärung als geprüft markierst.', imprintApprovalIncomplete: 'Trage den Organisationsnamen, die vollständige Anschrift und eine Kontakt-E-Mail ein, bevor du das Impressum als geprüft markierst.',
     title: 'PHRONEO Admin Portal',
     badge: 'Verwaltung',
     workspace: 'Arbeitsbereich',
     viewWebsite: 'Website ansehen',
     adminReady: 'Admin-Sitzung aktiv',
+    titleSlugRequired: 'Bitte Titel (DE) und Slug angeben.',
     storageError: 'Änderungen konnten nicht gespeichert werden. Der lokale Browserspeicher ist möglicherweise voll.',
     welcomeKicker: 'DEINE COMMUNITY AUF EINEN BLICK',
     welcomeTitle: 'Willkommen zurück, PHRONEO-Team',
@@ -376,6 +396,8 @@ export default {
     newStatus: 'Neu',
     contactedStatus: 'Kontaktiert',
     doneStatus: 'Erledigt',
+    changeStatus: 'Status der Anfrage ändern',
+    statusHelp: 'Neu bedeutet, dass die Anfrage noch bearbeitet werden muss. Kontaktiert bedeutet, dass eine Antwort gesendet wurde. Erledigt bedeutet, dass die Anfrage abgeschlossen ist.',
     registrations: 'Anmeldungen',
     contacts: 'Kontakte',
     age: 'Alter',
@@ -383,6 +405,26 @@ export default {
     interest: 'Interesse',
     message: 'Nachricht',
     emailUpdates: 'E-Mail-Neuigkeiten',
+    emailDelivery: 'E-Mail-Versand',
+    emailDelivery_pending: 'Wartet auf Einrichtung',
+    emailDelivery_sent: 'Gesendet',
+    emailDelivery_failed: 'Fehlgeschlagen',
+    resendContactEmail: 'Erneut senden',
+    contactEmailSent: 'Kontaktanfrage wurde per E-Mail gesendet.',
+    contactEmailSendFailed: 'E-Mail konnte nicht gesendet werden. SMTP-Einstellungen prüfen und erneut versuchen.',
+    contactDeliveryHeading: 'E-Mail-Versand für Kontaktanfragen',
+    contactDeliveryHelp: 'Neue Kontaktanfragen werden im Admin-Posteingang gespeichert und an diese Adresse gesendet. Änderungen gelten für neue Nachrichten und erneute Versandversuche.',
+    contactRecipientEmail: 'Empfänger-E-Mail-Adresse',
+    contactDeliverySaved: 'Empfängeradresse gespeichert.',
+    contactDeliveryLoadFailed: 'Empfängeradresse konnte nicht geladen werden.',
+    contactDeliverySaveFailed: 'Empfängeradresse konnte nicht gespeichert werden.',
+    contactEmailInvalid: 'Bitte gib eine gültige E-Mail-Adresse ein.',
+    smtpReady: 'SMTP ist eingerichtet. Kontaktanfragen können per E-Mail gesendet werden.',
+    smtpMissing: 'E-Mail-Versand ist noch nicht aktiv. Die Serveradministration muss SMTP einrichten; Anfragen werden weiterhin im Posteingang gespeichert.',
+    sendTestEmail: 'Test-E-Mail senden',
+    smtpTestSent: 'Test-E-Mail gesendet. Bitte prüfe den Posteingang des Empfängers.',
+    smtpTestFailed: 'Test-E-Mail fehlgeschlagen. Bitte Gmail-App-Passwort und Servereinstellungen prüfen.',
+    saveBeforeTesting: 'Speichere zuerst die Empfängeradresse, bevor du einen Test sendest.',
     optedIn: 'Ja',
     notOptedIn: 'Nein',
     anonymousName: 'Kein Name angegeben',
@@ -403,7 +445,7 @@ export default {
     contactType: 'Kontakt',
     removeEntry: 'Eintrag entfernen',
     legalHeading: 'Rechtliche Angaben',
-    legalLead: 'Aktualisiere hier die erforderlichen Pflichtangaben. Änderungen erscheinen sofort auf der Impressums-Seite.',
+    legalLead: 'Diese Angaben werden nur in diesem Browser gespeichert. Prüfe die rechtlichen Angaben und richte sie vor dem Start auf der veröffentlichten Website ein.',
     cmsHeading: 'Decap CMS (Git-basiertes Redaktionssystem)',
     cmsLead: 'Decap CMS ist unter public/admin/ vorbereitet. Starte den Proxy-Server, um das Git-basierte CMS lokal zu nutzen:',
     cmsProxyLead: 'Wenn der Proxy läuft oder GitHub OAuth eingerichtet ist, öffne Decap CMS:',
@@ -415,12 +457,33 @@ export default {
     entryDeleted: 'Programm gelöscht.',
     exportDone: 'programs.json wurde exportiert.',
     submissionsCleared: 'Alle Anfragen wurden gelöscht.',
-    legalSaved: 'Rechtliche Angaben gespeichert.',
+    legalSaved: 'Rechtliche Angaben in diesem Browser gespeichert.',
     navDashboard: 'Dashboard',
     navPrograms: 'Programme verwalten',
+    navTeam: 'Teammitglieder',
     navSubmissions: 'Anmeldungen & Posteingang',
+    navAdmins: 'Admin-Konten',
     navSettings: 'Website-Einstellungen',
     navContent: 'Content-CMS',
+    manageTeamHeading: 'Teammitglieder & Mentoren',
+    teamChangesHelp: 'Teammitglieder und Mentoren für die Über-uns-Seite hinzufügen, bearbeiten oder entfernen.',
+    addNewMember: '+ Neues Mitglied',
+    exportTeamJson: 'team.json exportieren',
+    editMemberHeading: 'Teammitglied bearbeiten',
+    newMemberHeading: 'Neues Teammitglied anlegen',
+    memberName: 'Vollständiger Name',
+    memberNameRequired: 'Bitte einen Namen eingeben.',
+    memberRoleDe: 'Rolle (Deutsch)',
+    memberRoleEn: 'Rolle (Englisch)',
+    memberBioDe: 'Biografie (Deutsch)',
+    memberBioEn: 'Biografie (Englisch)',
+    memberImage: 'Profilfoto',
+    memberFeatured: 'Hervorgehoben (z. B. Gründer-Hervorhebung)',
+    memberOrder: 'Reihenfolge (1, 2, 3...)',
+    editMember: 'Bearbeiten',
+    deleteMember: 'Löschen',
+    confirmDeleteMember: 'Möchtest du dieses Teammitglied wirklich entfernen?',
+    noTeamMembers: 'Noch keine Teammitglieder eingetragen.',
     signInTitle: 'Admin-Anmeldung',
     signInIntro: 'Melde dich an, um die PHRONEO-Website zu verwalten.',
     setupTitle: 'Admin-Konto erstellen',
@@ -449,6 +512,9 @@ export default {
     submissionsLoadError: 'Anmeldungen und Kontaktanfragen konnten nicht geladen werden. Prüfe die API-Verbindung; der Posteingang versucht es automatisch erneut.',
     signOut: 'Abmelden',
     authError: 'E-Mail-Adresse oder Passwort ist falsch.',
+    apiUnavailable: 'Der Admin-Dienst ist nicht erreichbar. Starte den API-Server und versuche es erneut.',
+    loginFailed: 'Die Anmeldung ist fehlgeschlagen. Bitte versuche es später erneut.',
+    teamSaveFailed: 'Die Teamänderung konnte nicht gespeichert werden. Prüfe die API-Verbindung und versuche es erneut.',
     authUnavailable: 'Die Anmeldung ist in diesem Browser nicht verfügbar. Bitte nutze einen aktuellen Browser über HTTPS.',
     lightMode: 'Zum hellen Design wechseln',
     darkMode: 'Zum dunklen Design wechseln',

@@ -1,7 +1,12 @@
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import Admin from '../models/Admin.js';
+import { fileURLToPath } from 'node:url';
+import { dirname, resolve } from 'node:path';
 
+const serverDir = dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: resolve(serverDir, '../../.env') });
+dotenv.config({ path: resolve(serverDir, '../.env') });
 dotenv.config();
 
 const email = String(process.env.ADMIN_EMAIL || '').trim().toLowerCase();

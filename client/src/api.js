@@ -42,6 +42,42 @@ export const deleteProgram = async (slug) => {
   return response.json();
 };
 
+// Team Members API
+export const fetchTeamMembers = async () => {
+  const response = await fetch(`${API_URL}/team`);
+  if (!response.ok) throw new Error('Failed to fetch team members');
+  return response.json();
+};
+
+export const createTeamMember = async (member) => {
+  const response = await fetch(`${API_URL}/team`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...getAuthHeader() },
+    body: JSON.stringify(member)
+  });
+  if (!response.ok) throw new Error('Failed to create team member');
+  return response.json();
+};
+
+export const updateTeamMember = async (id, member) => {
+  const response = await fetch(`${API_URL}/team/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json', ...getAuthHeader() },
+    body: JSON.stringify(member)
+  });
+  if (!response.ok) throw new Error('Failed to update team member');
+  return response.json();
+};
+
+export const deleteTeamMember = async (id) => {
+  const response = await fetch(`${API_URL}/team/${id}`, {
+    method: 'DELETE',
+    headers: getAuthHeader()
+  });
+  if (!response.ok) throw new Error('Failed to delete team member');
+  return response.json();
+};
+
 // Submissions API
 export const createSubmission = async (submission) => {
   const response = await fetch(`${API_URL}/submissions`, {
@@ -49,7 +85,10 @@ export const createSubmission = async (submission) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(submission)
   });
-  if (!response.ok) throw new Error('Failed to create submission');
+  if (!response.ok) {
+    const error = await response.json().catch(() => ({}));
+    throw new Error(error.message || 'Failed to create submission');
+  }
   return response.json();
 };
 
@@ -93,6 +132,108 @@ export const clearSubmissions = async () => {
   return response.json();
 };
 
+export const fetchContactDeliverySettings = async () => {
+  const response = await fetch(`${API_URL}/settings/contact-delivery`, { headers: getAuthHeader() });
+  if (!response.ok) throw new Error('Failed to load contact delivery settings');
+  return response.json();
+};
+
+export const saveContactDeliverySettings = async (recipientEmail) => {
+  const response = await fetch(`${API_URL}/settings/contact-delivery`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json', ...getAuthHeader() },
+    body: JSON.stringify({ recipientEmail })
+  });
+  if (!response.ok) {
+    const error = await response.json().catch(() => ({}));
+    throw new Error(error.message || 'Failed to save contact delivery settings');
+  }
+  return response.json();
+};
+
+export const sendContactDeliveryTest = async () => {
+  const response = await fetch(`${API_URL}/settings/contact-delivery/test`, {
+    method: 'POST',
+    headers: getAuthHeader()
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.message || 'Failed to send test email');
+  return data;
+};
+
+export const fetchLegalPages = async () => {
+  const response = await fetch(`${API_URL}/settings/legal-pages`);
+  if (!response.ok) throw new Error('Failed to load legal pages');
+  return response.json();
+};
+
+export const fetchAdminLegalPages = async () => {
+  const response = await fetch(`${API_URL}/settings/legal-pages`, { headers: getAuthHeader() });
+  if (!response.ok) throw new Error('Failed to load legal pages');
+  return response.json();
+};
+
+export const saveLegalPages = async (legalPages) => {
+  const response = await fetch(`${API_URL}/settings/legal-pages`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json', ...getAuthHeader() },
+    body: JSON.stringify(legalPages)
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.message || 'Failed to save legal pages');
+  return data;
+};
+
+export const fetchStories = async () => {
+  const response = await fetch(`${API_URL}/stories`);
+  if (!response.ok) throw new Error('Failed to load stories');
+  return response.json();
+};
+
+export const fetchAdminStories = async () => {
+  const response = await fetch(`${API_URL}/stories/admin`, { headers: getAuthHeader() });
+  if (!response.ok) throw new Error('Failed to load stories');
+  return response.json();
+};
+
+export const createStory = async (story) => {
+  const response = await fetch(`${API_URL}/stories`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...getAuthHeader() },
+    body: JSON.stringify(story)
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.message || 'Failed to create story');
+  return data;
+};
+
+export const updateStory = async (id, story) => {
+  const response = await fetch(`${API_URL}/stories/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json', ...getAuthHeader() },
+    body: JSON.stringify(story)
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.message || 'Failed to update story');
+  return data;
+};
+
+export const deleteStory = async (id) => {
+  const response = await fetch(`${API_URL}/stories/${id}`, { method: 'DELETE', headers: getAuthHeader() });
+  if (!response.ok) throw new Error('Failed to delete story');
+  return response.json();
+};
+
+export const resendContactEmail = async (id) => {
+  const response = await fetch(`${API_URL}/submissions/${id}/resend-email`, {
+    method: 'POST',
+    headers: getAuthHeader()
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.message || 'Failed to resend contact email');
+  return data;
+};
+
 // Auth and administrator management API
 export const fetchAdmins = async () => {
   const response = await fetch(`${API_URL}/auth/admins`, { headers: getAuthHeader() });
@@ -126,12 +267,20 @@ export const deleteAdmin = async (id) => {
 };
 
 export const loginAdmin = async (email, password) => {
-  const response = await fetch(`${API_URL}/auth/login`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, password })
-  });
-  if (!response.ok) throw new Error('Failed to login');
+  let response;
+  try {
+    response = await fetch(`${API_URL}/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+  } catch {
+    throw new Error('API_UNAVAILABLE');
+  }
+  if (!response.ok) {
+    if (response.status === 401) throw new Error('INVALID_CREDENTIALS');
+    throw new Error('LOGIN_FAILED');
+  }
   const data = await response.json();
   sessionStorage.setItem('phroneo_admin_token', data.token);
   return data;

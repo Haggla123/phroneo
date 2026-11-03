@@ -1,38 +1,27 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import Program from './models/Program.js';
-import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-dotenv.config();
+const root = fileURLToPath(new URL('../', import.meta.url));
+dotenv.config({ path: resolve(root, '.env') });
+dotenv.config({ path: fileURLToPath(new URL('.env', import.meta.url)) });
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const seedPrograms = async () => {
-  try {
-    await mongoose.connect(process.env.MONGODB_URI);
-    console.log('MongoDB Connected');
-
-    // Read programs.json
-    const programsPath = join(process.cwd(), 'public/content/programs.json');
-    const programsData = JSON.parse(readFileSync(programsPath, 'utf-8'));
-
-    // Clear existing programs
-    await Program.deleteMany({});
-    console.log('Cleared existing programs');
-
-    // Insert programs
-    await Program.insertMany(programsData.programs);
-    console.log(`Inserted ${programsData.programs.length} programs`);
-
-    console.log('Seed completed successfully');
-    process.exit(0);
-  } catch (error) {
-    console.error('Error seeding database:', error);
-    process.exit(1);
-  }
-};
-
-seedPrograms();
+try {
+  if (!process.env.MONGODB_URI) throw new Error('MONGODB_URI is required.');
+  const source = JSON.parse(readFileSync(resolve(root, 'public/content/programs.json'), 'utf8'));
+  if (!Array.isArray(source.programs)) throw new Error('Expected programs.json to contain a programs array.');
+  await mongoose.connect(process.env.MONGODB_URI);
+  const operations = source.programs.map((program) => ({
+    updateOne: { filter: { slug: program.slug }, update: { $set: program }, upsert: true }
+  }));
+  if (operations.length) await Program.bulkWrite(operations, { ordered: true });
+  console.log(`Seeded or updated ${operations.length} programs without deleting other records.`);
+} catch (error) {
+  console.error('Program seed failed:', error.message);
+  process.exitCode = 1;
+} finally {
+  await mongoose.disconnect().catch(() => {});
+}

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { fetchPrograms } from './api.js';
+import { fetchPrograms, fetchTeamMembers } from './api.js';
 
 let cache;
+let teamCache;
 
 export function usePrograms() {
   const [s, set] = useState({ status: cache ? 'ok' : 'loading', data: cache || [] });
@@ -50,11 +51,78 @@ export function updateProgramsCache(newPrograms) {
   return true;
 }
 
+export function useTeam() {
+  const [s, set] = useState({ status: teamCache ? 'ok' : 'loading', data: teamCache || [] });
+
+  useEffect(() => {
+    let mounted = true;
+    const load = async () => {
+      // Use persisted API data as the source of truth when it exists.
+      try {
+        const team = await fetchTeamMembers();
+        if (Array.isArray(team) && team.length > 0) {
+          teamCache = team;
+          if (mounted) set({ status: 'ok', data: team });
+          return;
+        }
+      } catch {}
+
+      // Legacy/local fallback only when the API has no team records.
+      try {
+        const local = localStorage.getItem('phroneo_team_members');
+        if (local) {
+          const parsed = JSON.parse(local);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            teamCache = parsed;
+            if (mounted) set({ status: 'ok', data: parsed });
+            return;
+          }
+        }
+      } catch {}
+
+      try {
+        const response = await fetch('/content/team.json');
+        if (response.ok) {
+          const j = await response.json();
+          teamCache = Array.isArray(j.team) ? j.team : [];
+          if (mounted) set({ status: 'ok', data: teamCache });
+          return;
+        }
+      } catch {}
+
+      if (mounted) set({ status: 'error', data: [] });
+    };
+
+    const refresh = () => {
+      teamCache = undefined;
+      load();
+    };
+
+    load();
+    window.addEventListener('phroneo_team_updated', refresh);
+    return () => {
+      mounted = false;
+      window.removeEventListener('phroneo_team_updated', refresh);
+    };
+  }, []);
+
+  return s;
+}
+
+export function updateTeamCache(newTeam) {
+  teamCache = newTeam;
+  try {
+    localStorage.setItem('phroneo_team_members', JSON.stringify(newTeam));
+  } catch {}
+  window.dispatchEvent(new Event('phroneo_team_updated'));
+  return true;
+}
+
 export function useSEO(titleKey, descKey = 'seo.genD') {
   const { t, i18n } = useTranslation();
   useEffect(() => {
     const title = t(titleKey);
-    document.title = title.startsWith('PHRONEO') ? title : `${title} · PHRONEO`;
+    document.title = title.includes('PHRONEO') ? title : `${title} · PHRONEO`;
     const set = (sel, attr, val) => {
       let m = document.head.querySelector(sel);
       if (!m) {
@@ -75,13 +143,21 @@ export function useSEO(titleKey, descKey = 'seo.genD') {
 
 export const useLoc = () => {
   const { i18n } = useTranslation();
-  const l = i18n.language;
+  const rawLang = i18n.resolvedLanguage || i18n.language || 'de';
+  const l = rawLang.split('-')[0].toLowerCase();
   return {
     l,
-    pick: (o) => (o && (o[l] ?? o.de)) ?? '',
+    pick: (o) => {
+      if (!o) return '';
+      if (typeof o === 'string') return o;
+      if (typeof o === 'object') {
+        return o[l] || (l === 'en' ? (o.en || o.de) : (o.de || o.en)) || '';
+      }
+      return String(o);
+    },
     date: (d) => {
       try {
-        return new Intl.DateTimeFormat(l, { dateStyle: 'long' }).format(new Date(d));
+        return new Intl.DateTimeFormat(l === 'en' ? 'en-US' : 'de-DE', { dateStyle: 'long' }).format(new Date(d));
       } catch {
         return d;
       }

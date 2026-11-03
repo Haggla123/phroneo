@@ -18,6 +18,8 @@ export default {
   },
   footer: {
     blurb: 'Renew your mind. Transform your life. An initiative empowering young adults aged 18 to 30.',
+    tagline: 'Deeper thinking. Higher living.',
+    verse: 'Romans 12:2 · Renew your mind.',
     privacy: 'Privacy Policy',
     imprint: 'Legal Notice',
     rights: 'All rights reserved.',
@@ -91,6 +93,18 @@ export default {
     storyTitle: 'Our Story & Mission',
     storyText1: 'Young adults between 18 and 30 stand at critical crossroads in life: college, first jobs, relational commitments, doubts, and the search for authentic identity. Amid continuous digital noise and relentless cultural performance demands, safe spaces for deep spiritual and mental grounding are rare.',
     storyText2: 'PHRONEO was born out of a desire to create this exact space: combining spiritual depth, intentional mind renewal in the spirit of Romans 12:2, and practical everyday tools. We believe that a generation anchored in Christ’s truth will shape culture with clarity, hope, and love.',
+    founderKick: 'Founder & Visionary',
+    founderTitle: 'About Topmanie Izuwa',
+    founderSubtitle: 'Theology Student & Initiator of PHRONEO Project',
+    founderP1: 'My name is Topmanie Izuwa, and I am a theology student with a passion for the spiritual, personal, and social development of young people.',
+    founderP2: 'Through my several years of experience in social work, youth mentoring, and Christian community work, I have had the opportunity to support, guide, and encourage people from different backgrounds and walks of life.',
+    founderP3: 'For the past four years, I have been leading the Christian movement Make Room for the Lord, with a vision to bring people closer to Jesus Christ and strengthen the younger generation in their faith.',
+    founderP4: 'Through PHRONEO Project, I want to extend this passion by creating a space where people can grow spiritually, develop personally, and discover their potential. My heart is to connect faith with practical life development and help people live intentional, purpose-driven lives shaped by Christian values.',
+    missionAlt: 'PHRONEO Mission & Spirit',
+    missionNote: 'PHRONEO Study & Mission',
+    founderAlt: 'Topmanie Izuwa',
+    teamAlt: 'PHRONEO Team & Mentors',
+    teamNote: 'PHRONEO Team Portrait',
     sTitle: 'Our Core Values',
     s: [
       {
@@ -109,6 +123,13 @@ export default {
     teamTitle: 'Leadership Team & Mentors',
     teamLead: 'Passionate leaders committed to walking alongside the next generation.',
     team: [
+      {
+        name: 'Topmanie Izuwa',
+        role: 'Founder & Visionary Lead',
+        image: '/images/topmanie-izuwa.jpg',
+        featured: true,
+        bio: 'Theology student, founder of PHRONEO Project, and leader of Make Room for the Lord. Dedicated to connecting Christian faith with practical life development and mentoring young adults to discover their purpose.'
+      },
       {
         name: 'Miriam Weber',
         role: 'Founder & Program Director',
@@ -141,31 +162,16 @@ export default {
     signup: 'Register for this program',
     notFound: 'Program not found',
     cohortBadge: 'Cohort 2027',
+    facts: 'Cohort Facts',
     applyDeadline: 'Registration closes 14 days before start'
   },
   stories: {
+    loading: 'Loading published stories…',
+    loadError: 'Stories could not be loaded right now.',
+    emptyNotice: 'We are preparing stories approved for publication. Please check back soon.',
     h1: 'Stories & Community',
-    lead: 'Real stories from young adults whose thinking and trajectories were shaped by PHRONEO.',
-    items: [
-      {
-        name: 'Sarah M. (23)',
-        role: 'Medical Student, Frankfurt',
-        quote: '“Through the Renew cohort, I realized how deeply my identity was tied to grades and validation. Romans 12:2 turned from a memory verse into daily freedom for my mind.”',
-        program: 'Renew 2026'
-      },
-      {
-        name: 'Lukas B. (27)',
-        role: 'Software Engineer, Darmstadt',
-        quote: '“Purpose mentoring helped me plan my career without anxiety or comparison. I learned to make vocational choices rooted in peace and calling.”',
-        program: 'Purpose 2026'
-      },
-      {
-        name: 'Elena K. (21)',
-        role: 'Media Apprentice, Mainz',
-        quote: '“The Together retreat was the first time I could talk honestly about mental health, faith doubts, and dreams without feeling judged.”',
-        program: 'Together Retreat 2026'
-      }
-    ],
+    lead: 'We are preparing participant stories for publication. Check back soon to read about the community.',
+    items: [],
     ctaTitle: 'Write Your Own Chapter',
     ctaText: 'Join a growing community committed to living with purpose and renewed vision.',
     ctaBtn: 'Register now'
@@ -209,24 +215,31 @@ export default {
     h1: 'Support PHRONEO',
     lead: 'Help us provide emerging young adults with access to transformative programs, mentorship, and community.',
     introTitle: 'Invest in the Rising Generation',
-    introText: 'As a non-profit initiative, we are committed to ensuring that financial limitations never prevent a student or apprentice from participating. Your financial support funds scholarships, workbook development, and retreat subsidies.',
+    introText: 'We want to make programs, mentorship, and community available to young adults. If you would like to support PHRONEO, contact us to discuss current options.',
     waysTitle: 'Ways to Partner with Us',
     ways: [
       {
         title: 'Sponsor a Student Scholarship',
-        desc: 'A one-time donation of €150 covers all materials, cohort fees, and coaching sessions for a young adult with limited financial means.'
+        desc: 'Your support can help young adults access our programs. Contact us to discuss current ways to contribute.'
       },
       {
         title: 'Monthly Sustaining Partner',
-        desc: 'A recurring gift (€25, €50, or €100 monthly) provides the financial foundation for venue rentals, mentor training, and program growth.'
+        desc: 'Ongoing support can help us plan programs and mentorship over time. Contact us to discuss the current options.'
       },
       {
         title: 'Join our Mentorship Network',
         desc: 'Are you an experienced professional willing to volunteer your time to mentor a young adult? Connect with us to join our mentor team.'
       }
     ],
-    bankTitle: 'Donation Account (Germany / SEPA)',
-    taxNotice: 'Donations to PHRONEO are tax-deductible in Germany. Formal donation receipts (Zuwendungsbestätigung) are issued annually.'
+    bankTitle: 'Ask about supporting PHRONEO',
+    taxNotice: 'Please contact us for current giving information and details about any donation receipts that may be available.',
+    contactForGiving: 'Contact us',
+    option: 'Option',
+    bankKick: 'Giving & Support',
+    recipientLabel: 'Recipient / Account Holder',
+    bicLabel: 'BIC / SWIFT',
+    purposeLabel: 'Purpose / Reference',
+    purposeText: 'Donation PHRONEO / Your Name'
   },
   join: {
     h1: 'Your journey of growth starts here.',
@@ -297,7 +310,7 @@ export default {
       },
       {
         q: 'What is the cost of participation?',
-        a: 'We keep participant fees deliberately accessible thanks to generous donors (€60–€120 for multi-week cohorts including materials). Scholarships are readily available upon request.'
+        a: 'Program fees and available financial support depend on the program. Contact us for current details before applying.'
       },
       {
         q: 'Where do in-person cohorts and retreats happen?',
@@ -315,7 +328,9 @@ export default {
   },
   privacy: {
     h1: 'Privacy Policy',
-    warn: 'Draft privacy notice: this page needs review and completion before launch.',
+    warn: 'Draft legal information: an administrator must complete and review this page before it is ready for publication.',
+    loading: 'Loading legal information…',
+    loadError: 'Legal information could not be loaded right now.',
     s: [
       '1. Controller Information',
       '2. Collection & Storage of Personal Data (Contact & Registration Forms)',
@@ -329,8 +344,8 @@ export default {
   },
   imprint: {
     h1: 'Legal Notice (Impressum)',
-    warn: 'Statutory information per § 5 DDG and § 18(2) MStV.',
-    missing: '[Configurable in Admin / Config]',
+    warn: 'Draft legal notice: an administrator must complete and review this information before publication.',
+    missing: '[To be completed by an administrator]',
     f: {
       name: 'Organization / Initiative Name',
       form: 'Legal Form',
@@ -345,11 +360,16 @@ export default {
     }
   },
   admin: {
+    navStories: 'Stories editor', edit: 'Edit', delete: 'Delete',
+    storiesHeading: 'Stories editor', storiesIntro: 'Add participant stories in German and English. Publish only after the person has explicitly agreed to public use.',
+    storiesLoadFailed: 'Stories could not be loaded.', storySaveFailed: 'The story could not be saved.', storySaved: 'Story saved.', storyAdd: 'Add a story', storyEdit: 'Edit story', storyDisplayName: 'Display name', storyRole: 'Role or description', storyProgram: 'Program', storyQuote: 'Story quote', storyConsent: 'I confirm the person has explicitly agreed to publication of this story.', storyConsentRequired: 'Record the participant’s explicit consent before saving.', storyPublish: 'Publish on the website', storyPublished: 'Published', storyDraft: 'Draft', storyList: 'All stories', storyNone: 'No stories have been added yet.', storyDeleteConfirm: 'Delete this story?',
+    legalLoadFailed: 'Legal pages could not be loaded.', legalSaved: 'Legal pages saved.', legalApproved: 'Marked reviewed and ready for publication.', legalDraft: 'Draft: this page is hidden behind a draft notice until reviewed.', imprintApproval: 'I confirm the legal notice information is complete and reviewed.', privacyApproval: 'I confirm both privacy policy language versions are complete and reviewed.', privacyPolicyLanguage: 'Privacy policy text ({{language}})', privacyApprovalIncomplete: 'Complete both language versions and remove all unfinished placeholders before marking the policy reviewed.', imprintApprovalIncomplete: 'Enter the organization name, full address, and contact email before marking the legal notice reviewed.',
     title: 'PHRONEO Admin Portal',
     badge: 'Management',
     workspace: 'Workspace',
     viewWebsite: 'View website',
     adminReady: 'Admin session active',
+    titleSlugRequired: 'Please provide Title (DE) and Slug.',
     storageError: 'Could not save these changes in this browser. The local storage may be full.',
     welcomeKicker: 'YOUR COMMUNITY, AT A GLANCE',
     welcomeTitle: 'Welcome back, PHRONEO team',
@@ -376,6 +396,8 @@ export default {
     newStatus: 'New',
     contactedStatus: 'Contacted',
     doneStatus: 'Done',
+    changeStatus: 'Change request status',
+    statusHelp: 'New means it needs attention; Contacted means a reply was sent; Done means the request is resolved.',
     registrations: 'Applications',
     contacts: 'Contacts',
     age: 'Age',
@@ -383,6 +405,26 @@ export default {
     interest: 'Interest',
     message: 'Message',
     emailUpdates: 'Email updates',
+    emailDelivery: 'Email delivery',
+    emailDelivery_pending: 'Pending setup',
+    emailDelivery_sent: 'Sent',
+    emailDelivery_failed: 'Failed',
+    resendContactEmail: 'Send again',
+    contactEmailSent: 'Contact email sent.',
+    contactEmailSendFailed: 'Could not send the contact email. Check SMTP settings and retry.',
+    contactDeliveryHeading: 'Contact form email delivery',
+    contactDeliveryHelp: 'New contact requests are saved in the admin inbox and sent to this address. Changing it here applies to future messages and retries.',
+    contactRecipientEmail: 'Recipient email address',
+    contactDeliverySaved: 'Recipient address saved.',
+    contactDeliveryLoadFailed: 'Could not load the recipient address.',
+    contactDeliverySaveFailed: 'Could not save the recipient address.',
+    contactEmailInvalid: 'Enter a valid email address.',
+    smtpReady: 'SMTP is configured. Contact messages can be emailed.',
+    smtpMissing: 'Email is not active yet. Ask your server administrator to configure SMTP; submissions will still be saved in the inbox.',
+    sendTestEmail: 'Send test email',
+    smtpTestSent: 'Test email sent. Check the configured recipient inbox.',
+    smtpTestFailed: 'Test email failed. Check your Gmail app password and server settings.',
+    saveBeforeTesting: 'Save the recipient address before sending a test.',
     optedIn: 'Yes',
     notOptedIn: 'No',
     anonymousName: 'Name not provided',
@@ -403,7 +445,7 @@ export default {
     contactType: 'Contact',
     removeEntry: 'Remove entry',
     legalHeading: 'Legal details',
-    legalLead: 'Update the required legal information here. Changes appear on the legal notice page immediately.',
+    legalLead: 'These details are saved only in this browser. Verify all legal information and configure it on the deployed site before launch.',
     cmsHeading: 'Decap CMS (Git-based content manager)',
     cmsLead: 'Decap CMS is prepared in public/admin/. To use the Git-based CMS locally, start its proxy server:',
     cmsProxyLead: 'When the proxy is running or GitHub OAuth is configured, open Decap CMS:',
@@ -415,12 +457,33 @@ export default {
     entryDeleted: 'Program deleted.',
     exportDone: 'programs.json exported.',
     submissionsCleared: 'All submissions cleared.',
-    legalSaved: 'Legal details saved.',
+    legalSaved: 'Legal details saved in this browser.',
     navDashboard: 'Dashboard',
     navPrograms: 'Manage programs',
+    navTeam: 'Team members',
     navSubmissions: 'Applications & inbox',
+    navAdmins: 'Admin accounts',
     navSettings: 'Site settings',
     navContent: 'Content CMS',
+    manageTeamHeading: 'Team Members & Mentors',
+    teamChangesHelp: 'Add, update, or remove leadership team members and mentors shown on the About page.',
+    addNewMember: '+ New team member',
+    exportTeamJson: 'Export team.json',
+    editMemberHeading: 'Edit team member',
+    newMemberHeading: 'Add new team member',
+    memberName: 'Full name',
+    memberNameRequired: 'Please provide a name.',
+    memberRoleDe: 'Role (German)',
+    memberRoleEn: 'Role (English)',
+    memberBioDe: 'Bio (German)',
+    memberBioEn: 'Bio (English)',
+    memberImage: 'Profile photo',
+    memberFeatured: 'Featured (e.g. Founder spotlight)',
+    memberOrder: 'Display order (1, 2, 3...)',
+    editMember: 'Edit',
+    deleteMember: 'Delete',
+    confirmDeleteMember: 'Are you sure you want to delete this team member?',
+    noTeamMembers: 'No team members added yet.',
     signInTitle: 'Admin sign in',
     signInIntro: 'Sign in to manage the PHRONEO website.',
     setupTitle: 'Create your admin account',
@@ -449,6 +512,9 @@ export default {
     submissionsLoadError: 'Could not load registrations and contact requests. Check the API connection; the inbox will retry automatically.',
     signOut: 'Sign out',
     authError: 'The email or password is incorrect.',
+    apiUnavailable: 'The admin service is unavailable. Start the API server and try again.',
+    loginFailed: 'Sign-in failed. Please try again shortly.',
+    teamSaveFailed: 'The team change could not be saved. Check the API connection and try again.',
     authUnavailable: 'Sign-in is unavailable in this browser. Please use a modern browser over HTTPS.',
     lightMode: 'Switch to light mode',
     darkMode: 'Switch to dark mode',

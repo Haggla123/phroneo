@@ -28,7 +28,7 @@ export default function Support() {
             <div key={idx} className="support-tier">
               <div>
                 <span className="badge" style={{ marginBottom: '1rem' }}>
-                  Option {idx + 1}
+                  {t('support.option', { defaultValue: 'Option' })} {idx + 1}
                 </span>
                 <h3 style={{ color: 'var(--navy)', marginBottom: '0.8rem' }}>{w.title}</h3>
                 <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>{w.desc}</p>
@@ -42,40 +42,15 @@ export default function Support() {
           ))}
         </div>
 
-        {/* Bank Details Card */}
+        {/* Donation details are shown only after the organization confirms current account information. */}
         <div className="bank-card">
-          <p className="kick gold" style={{ margin: 0 }}>Spenden & Fördern</p>
+          <p className="kick gold" style={{ margin: 0 }}>{t('support.bankKick')}</p>
           <h3>{t('support.bankTitle')}</h3>
           <p style={{ opacity: 0.9, maxWidth: '65ch', margin: '0.5rem 0 1.5rem' }}>
             {t('support.taxNotice')}
           </p>
 
-          <div className="bank-grid">
-            <div>
-              <span style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0.7, display: 'block' }}>
-                Empfänger / Kontoinhaber
-              </span>
-              <strong>PHRONEO e.V. (i. Gr.)</strong>
-            </div>
-            <div>
-              <span style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0.7, display: 'block' }}>
-                IBAN
-              </span>
-              <strong style={{ letterSpacing: '0.05em' }}>DE89 5005 0201 0000 1234 56</strong>
-            </div>
-            <div>
-              <span style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0.7, display: 'block' }}>
-                BIC / Swift
-              </span>
-              <strong>HELA DE F1 FRA</strong>
-            </div>
-            <div>
-              <span style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0.7, display: 'block' }}>
-                Verwendungszweck
-              </span>
-              <strong>Spende PHRONEO / Name</strong>
-            </div>
-          </div>
+          <Link className="btn btn-gold" to="/contact">{t('support.contactForGiving')}</Link>
         </div>
       </Section>
     </>

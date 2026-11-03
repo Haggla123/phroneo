@@ -1,41 +1,43 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useEffect, useState } from 'react';
+import { fetchStories } from '../api.js';
 import { useSEO } from '../hooks.js';
 import { Section, PageHead } from '../components/UI.jsx';
 
 export default function Stories() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   useSEO('seo.stories');
-
-  const raw = t('stories.items', { returnObjects: true });
-  const items = Array.isArray(raw) ? raw : [];
+  const [items, setItems] = useState([]); const [loading, setLoading] = useState(true); const [failed, setFailed] = useState(false);
+  useEffect(() => { let alive = true; fetchStories().then((data) => { if (alive) setItems(data); }).catch(() => { if (alive) setFailed(true); }).finally(() => { if (alive) setLoading(false); }); return () => { alive = false; }; }, []);
+  const lang = i18n.resolvedLanguage === 'de' ? 'de' : 'en';
 
   return (
     <>
       <PageHead title={t('stories.h1')} lead={t('stories.lead')} />
 
       <Section>
-        <div className="grid3" style={{ alignItems: 'stretch' }}>
-          {items.map((item, idx) => (
-            <div key={idx} className="story-card">
+        {items.length ? <div className="grid3" style={{ alignItems: 'stretch' }}>
+          {items.map((item) => (
+            <div key={item._id} className="story-card">
               <div>
                 <span className="badge" style={{ marginBottom: '1rem' }}>
-                  {item.program}
+                  {item.program?.[lang] || item.program?.en || item.program?.de}
                 </span>
-                <p className="story-quote">{item.quote}</p>
+                <p className="story-quote">{item.quote?.[lang] || item.quote?.en || item.quote?.de}</p>
               </div>
               <div className="story-author">
                 <div className="team-avatar" style={{ width: '48px', height: '48px', fontSize: '1.2rem', margin: 0 }}>
-                  {item.name.charAt(0)}
+                  {item.displayName?.charAt(0)}
                 </div>
                 <div className="story-meta">
-                  <h4>{item.name}</h4>
-                  <p>{item.role}</p>
+                  <h4>{item.displayName}</h4>
+                  <p>{item.role?.[lang] || item.role?.en || item.role?.de}</p>
                 </div>
               </div>
             </div>
           ))}
-        </div>
+        </div> : <p role={failed ? 'alert' : 'status'} className="narrow" style={{ textAlign: 'center', color: 'var(--muted)' }}>{loading ? t('stories.loading') : failed ? t('stories.loadError') : t('stories.emptyNotice')}</p>}
       </Section>
 
       <Section tone="navy">

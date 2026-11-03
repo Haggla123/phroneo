@@ -73,7 +73,7 @@ function FormShell({ kind, extra, withAge, withMessage, requireName = true, requ
 
     setSt('sending');
     try {
-      const { consent, website, ...data } = v;
+      const { website, ...data } = v;
       await createSubmission({ kind, ...data });
       setSt('ok');
       setV({ ...v, name: '', email: '', age: '', message: '', consent: false });

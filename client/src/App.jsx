@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
@@ -18,7 +18,10 @@ export default function App() {
   const isAdmin = pathname.startsWith('/admin');
   const { t } = useTranslation();
   const main = useRef(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
+    // Browsers may restore a mid-page scroll offset after refresh, placing
+    // the sticky navigation over the page heading. Keep route entry at top.
+    if ('scrollRestoration' in window.history) window.history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
   }, [pathname]);
 

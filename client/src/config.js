@@ -1,4 +1,4 @@
-// Site configuration and legal defaults.
+// Legal details intentionally default to blank until the organization verifies them.
 const savedLegal = (() => {
   try {
     const raw = localStorage.getItem('phroneo_legal_config');
@@ -11,16 +11,16 @@ const savedLegal = (() => {
 export const SITE = {
   formEndpoint: import.meta.env.VITE_FORM_ENDPOINT || '',
   legal: savedLegal || {
-    name: 'PHRONEO Initiative e.V. (i. Gr.)',
-    form: 'Gemeinnütziger Verein in Gründung',
-    street: 'Kaiserstraße 42',
-    city: '60311 Frankfurt am Main',
-    representative: 'Miriam Weber, David Keller',
-    email: 'hallo@phroneo.de',
-    phone: '+49 (0) 69 1234 5678',
-    register: 'Amtsgericht Frankfurt am Main (in Vorbereitung)',
-    vatId: 'Befreit nach § 4 Nr. 22 UStG',
-    editorial: 'Miriam Weber (inhaltlich verantwortlich)'
+    name: '',
+    form: '',
+    street: '',
+    city: '',
+    representative: '',
+    email: '',
+    phone: '',
+    register: '',
+    vatId: '',
+    editorial: ''
   }
 };
 

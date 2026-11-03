@@ -39,6 +39,10 @@ const submissionSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
+  consent: { type: Boolean, default: false },
+  consentAt: { type: Date },
+  emailDeliveryStatus: { type: String, enum: ['pending', 'sent', 'failed'], default: 'pending' },
+  emailSentAt: { type: Date },
   status: {
     type: String,
     enum: ['new', 'contacted', 'done'],

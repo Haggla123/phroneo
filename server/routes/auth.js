@@ -81,7 +81,8 @@ router.post('/login', async (req, res) => {
       email: admin.email
     });
   } catch (error) {
-    res.status(500).json({ message: 'Error logging in', error: error.message });
+    console.error('Admin login failed:', error.message);
+    res.status(500).json({ message: 'Unable to log in right now' });
   }
 });
 

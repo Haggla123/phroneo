@@ -1,0 +1,65 @@
+{
+  "_note": "PHRONEO Team Members - Can be edited via /admin or directly in this file.",
+  "team": [
+    {
+      "id": "topmanie-izuwa",
+      "name": "Topmanie Izuwa",
+      "role": {
+        "de": "Gründer & Initiator",
+        "en": "Founder & Visionary Lead"
+      },
+      "bio": {
+        "de": "Theologiestudent, Gründer des PHRONEO Project und Leiter von Make Room for the Lord. Engagiert sich leidenschaftlich dafür, christlichen Glauben mit praktischer Lebensentwicklung zu verbinden und junge Menschen zu stärken.",
+        "en": "Theology student, founder of PHRONEO Project, and leader of Make Room for the Lord. Dedicated to connecting Christian faith with practical life development and mentoring young adults to discover their purpose."
+      },
+      "image": "/images/topmanie-izuwa.jpg",
+      "featured": true,
+      "order": 1
+    },
+    {
+      "id": "miriam-weber",
+      "name": "Miriam Weber",
+      "role": {
+        "de": "Programmleitung & Beratung",
+        "en": "Program Director & Counselor"
+      },
+      "bio": {
+        "de": "Theologin und systemische Beraterin mit Leidenschaft für Next-Gen-Begleitung und Mindset-Coaching.",
+        "en": "Theologian and systemic counselor passionate about next-generation discipleship and mindset coaching."
+      },
+      "image": "",
+      "featured": false,
+      "order": 2
+    },
+    {
+      "id": "david-keller",
+      "name": "David Keller",
+      "role": {
+        "de": "Mentoring & Kooperationen",
+        "en": "Mentorship & Partnerships"
+      },
+      "bio": {
+        "de": "Wirtschaftsingenieur und Mentor. Begleitet Berufseinsteiger bei der Vereinbarkeit von christlichen Werten und Beruf.",
+        "en": "Industrial engineer and mentor. Helps early-career professionals integrate faith and workplace excellence."
+      },
+      "image": "",
+      "featured": false,
+      "order": 3
+    },
+    {
+      "id": "tabea-lindner",
+      "name": "Tabea Lindner",
+      "role": {
+        "de": "Community & Events",
+        "en": "Community & Events"
+      },
+      "bio": {
+        "de": "Pädagogin und Seelsorgerin. Koordiniert Retreats und sorgt für eine Atmosphäre, in der sich jeder willkommen fühlt.",
+        "en": "Educator and pastoral counselor. Coordinates retreats and creates warm spaces where every person belongs."
+      },
+      "image": "",
+      "featured": false,
+      "order": 4
+    }
+  ]
+}

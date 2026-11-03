@@ -73,13 +73,13 @@ export function ProgramDetail() {
               {t('programs.outcomes')}
             </h2>
             <ul className="ticks">
-              {(p.outcomes?.[l] ?? p.outcomes?.de ?? []).map((o) => (
+              {((p.outcomes?.[l] || (l === 'en' ? (p.outcomes?.en || p.outcomes?.de) : (p.outcomes?.de || p.outcomes?.en))) || []).map((o) => (
                 <li key={o}>{o}</li>
               ))}
             </ul>
           </div>
 
-          <aside className="facts" aria-label="Facts">
+          <aside className="facts" aria-label={t('programs.facts') || 'Facts'}>
             <span className="badge" style={{ marginBottom: '1rem' }}>
               {t('programs.cohortBadge')}
             </span>

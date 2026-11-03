@@ -1,132 +1,42 @@
-# PHRONEO Backend
+# PHRONEO API
 
-This backend provides a REST API for the PHRONEO website with MongoDB integration.
+The Express API is in `server/` and connects to MongoDB before listening. Configure `MONGODB_URI`, `JWT_SECRET` (unique, at least 32 characters), `PORT`, and `FRONTEND_URL` in the root `.env` for local development or in the deployment environment. The API rejects weak/missing JWT secrets at startup.
 
-## Features
+Install from the repository root with `npm install`. Provision the initial administrator once using `ADMIN_EMAIL`, `ADMIN_PASSWORD` (10+ characters), and `MONGODB_URI`, then run `npm run admin:create`. The script refuses to create a second initial administrator. Never commit secrets or retain the initial password in a production environment.
 
-- **Programs CRUD API**: Create, read, update, and delete programs
-- **Form Submissions API**: Store registration and contact form submissions
-- **Admin Authentication**: JWT-based authentication for admin panel
-- **MongoDB Integration**: Persistent data storage
+Start locally with `npm run server:dev`; production uses `npm run server`. The health endpoint is `GET /api/health` on the configured API port. The API uses Helmet, JSON payload limits, rate limits on login and submissions, and CORS restricted to `FRONTEND_URL`.
 
-## Setup
+## Routes
 
-### Prerequisites
+| Method | Route | Access | Purpose |
+|---|---|---|---|
+| GET | `/api/health` | Public | API liveness |
+| GET | `/api/programs` | Public | List programs |
+| GET | `/api/programs/:slug` | Public | Read one program |
+| POST/PUT/DELETE | `/api/programs` and `/api/programs/:slug` | Admin JWT | Program management |
+| GET | `/api/team` and `/api/team/:id` | Public | Read team |
+| POST/PUT/DELETE | `/api/team` and `/api/team/:id` | Admin JWT | Team management |
+| POST | `/api/submissions` | Public, rate limited | Submit contact request or community interest |
+| GET | `/api/submissions` | Admin JWT | List at most 500 matching requests |
+| PATCH | `/api/submissions/:id/status` | Admin JWT | Update request status |
+| DELETE | `/api/submissions/:id` or `/api/submissions` | Admin JWT | Delete one or all requests |
+| POST | `/api/submissions/:id/resend-email` | Admin JWT | Retry delivery of a contact request to the current recipient |
+| GET/PUT | `/api/settings/contact-delivery` | Admin JWT | Read or update the contact form recipient email |
+| POST | `/api/settings/contact-delivery/test` | Admin JWT | Send a delivery test to the saved recipient |
+| GET | `/api/settings/legal-pages` | Public | Read approved/draft legal copy and its status |
+| PUT | `/api/settings/legal-pages` | Admin JWT | Save Privacy Policy and Impressum content; approval is rejected while required fields or draft markers remain |
+| GET | `/api/stories` | Public | List only published participant stories |
+| GET | `/api/stories/admin` | Admin JWT | List all stories, including drafts |
+| POST | `/api/stories` | Admin JWT | Create a story with recorded publication consent |
+| PUT/DELETE | `/api/stories/:id` | Admin JWT | Update or remove a story |
+| POST | `/api/auth/login` | Public, rate limited | Obtain 24-hour token |
+| GET | `/api/auth/verify` | Bearer token | Verify current admin |
+| GET/POST/DELETE | `/api/auth/admins` and `/api/auth/admins/:id` | Admin JWT | Manage admin accounts |
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or MongoDB Atlas)
+Admin APIs require `Authorization: Bearer <token>`. There is no public admin registration or password reset endpoint. Team and program images are stored as URLs or optimized data URLs. The current JSON request limit is 10 MB.
 
-### Installation
+`npm run seed:programs` upserts records from `public/content/programs.json` by slug; it does not delete other records. It requires a configured database and should still be run only against the intended environment.
 
-1. Install dependencies:
-```bash
-npm install
-```
+The frontend reads `VITE_API_URL` from the root `.env` because Vite is configured with `envDir: '..'`; only variables prefixed `VITE_` are exposed to the client bundle.
 
-2. Configure environment variables:
-```bash
-cp .env.example .env
-```
-
-Edit `.env` with your settings:
-```
-MONGODB_URI=mongodb://localhost:27017/phroneo
-JWT_SECRET=your-secret-key-change-in-production
-PORT=5000
-FRONTEND_URL=http://localhost:5173
-```
-
-3. Seed the database with initial programs:
-```bash
-node server/seed.js
-```
-
-### Running the Server
-
-Development mode (with auto-reload):
-```bash
-npm run server:dev
-```
-
-Production mode:
-```bash
-npm run server
-```
-
-The server will start on `http://localhost:5000`
-
-## API Endpoints
-
-### Health Check
-- `GET /api/health` - Check if API is running
-
-### Programs (Public)
-- `GET /api/programs` - Get all programs
-- `GET /api/programs/:slug` - Get single program by slug
-- `POST /api/programs` - Create program (admin only, requires auth)
-- `PUT /api/programs/:slug` - Update program (admin only, requires auth)
-- `DELETE /api/programs/:slug` - Delete program (admin only, requires auth)
-
-### Submissions
-- `POST /api/submissions` - Create new submission (public)
-- `GET /api/submissions` - Get all submissions (admin only, requires auth)
-- `PATCH /api/submissions/:id/status` - Update submission status (admin only, requires auth)
-- `DELETE /api/submissions/:id` - Delete submission (admin only, requires auth)
-- `DELETE /api/submissions` - Clear all submissions (admin only, requires auth)
-
-### Authentication
-- `POST /api/auth/register` - Register new admin
-- `POST /api/auth/login` - Login admin
-- `GET /api/auth/verify` - Verify JWT token
-
-## Authentication
-
-Admin routes require a JWT token in the Authorization header:
-```
-Authorization: Bearer <token>
-```
-
-The token is obtained by logging in via `/api/auth/login` or registering via `/api/auth/register`.
-
-## Frontend Integration
-
-The frontend uses the API via `src/api.js`. Set the API URL in `.env`:
-```
-VITE_API_URL=http://localhost:5000/api
-```
-
-## Database Models
-
-### Program
-- slug (string, unique)
-- image (string)
-- start (string)
-- format (object with de/en)
-- place (object with de/en)
-- title (object with de/en)
-- summary (object with de/en)
-- description (object with de/en)
-- outcomes (object with de/en arrays)
-
-### Submission
-- id (string, unique)
-- timestamp (date)
-- kind (enum: 'register', 'contact')
-- name (string)
-- email (string)
-- age (number, optional)
-- program (string, optional)
-- interest (string, optional)
-- message (string, optional)
-- status (enum: 'new', 'contacted', 'done')
-
-### Admin
-- email (string, unique)
-- password (hashed)
-
-## Development Notes
-
-- The frontend has a fallback to the JSON file if the API is unavailable
-- LocalStorage is no longer used for data persistence (replaced by MongoDB)
-- Admin authentication is now server-side with JWT tokens
-- Image uploads are stored as base64 data URLs in the database
+Contact request email delivery uses `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, and `SMTP_PASS`; `SMTP_FROM_EMAIL` is optional. For Gmail use `smtp.gmail.com` with port `587` and a Google App Password. Keep the app password in the private server environment and never commit it. `CONTACT_RECIPIENT_EMAIL` is the initial recipient, and admins can change the active recipient through the authenticated `/api/settings/contact-delivery` endpoint. The value is persisted in MongoDB. Contact submissions are stored even if SMTP is unavailable, and an admin can retry delivery after fixing SMTP. The admin settings page has an authenticated test-email action.

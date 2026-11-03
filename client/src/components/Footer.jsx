@@ -1,4 +1,4 @@
-﻿import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Logo } from './Header.jsx';
 
@@ -13,7 +13,7 @@ export default function Footer() {
             <p style={{ marginTop: '1.2rem', lineHeight: '1.6', maxWidth: '38ch' }}>
               {t('footer.blurb')}
             </p>
-            <p className="tag">Deeper thinking. Higher living.</p>
+            <p className="tag">{t('footer.tagline')}</p>
           </div>
           <div className="ftr-col">
             <h4>{t('mainNav')}</h4>
@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
         <div className="ftr-bottom">
           <small>© {new Date().getFullYear()} PHRONEO PROJECT. {t('footer.rights')}</small>
-          <small>Römer 12,2 · Erneuere deinen Verstand.</small>
+          <small>{t('footer.verse')}</small>
         </div>
       </div>
     </footer>

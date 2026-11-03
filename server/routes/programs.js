@@ -10,7 +10,8 @@ router.get('/', async (req, res) => {
     const programs = await Program.find().sort({ start: 1 });
     res.json(programs);
   } catch (error) {
-    res.status(500).json({ message: 'Error fetching programs', error: error.message });
+    console.error('Program list failed:', error.message);
+    res.status(500).json({ message: 'Unable to fetch programs' });
   }
 });
 
@@ -23,7 +24,8 @@ router.get('/:slug', async (req, res) => {
     }
     res.json(program);
   } catch (error) {
-    res.status(500).json({ message: 'Error fetching program', error: error.message });
+    console.error('Program read failed:', error.message);
+    res.status(500).json({ message: 'Unable to fetch program' });
   }
 });
 
@@ -34,7 +36,8 @@ router.post('/', auth, async (req, res) => {
     const saved = await program.save();
     res.status(201).json(saved);
   } catch (error) {
-    res.status(400).json({ message: 'Error creating program', error: error.message });
+    console.error('Program create failed:', error.message);
+    res.status(400).json({ message: 'Unable to create program; check required fields and values' });
   }
 });
 
@@ -51,7 +54,8 @@ router.put('/:slug', auth, async (req, res) => {
     }
     res.json(program);
   } catch (error) {
-    res.status(400).json({ message: 'Error updating program', error: error.message });
+    console.error('Program update failed:', error.message);
+    res.status(400).json({ message: 'Unable to update program; check required fields and values' });
   }
 });
 
@@ -64,7 +68,8 @@ router.delete('/:slug', auth, async (req, res) => {
     }
     res.json({ message: 'Program deleted successfully' });
   } catch (error) {
-    res.status(500).json({ message: 'Error deleting program', error: error.message });
+    console.error('Program delete failed:', error.message);
+    res.status(500).json({ message: 'Unable to delete program' });
   }
 });
 
