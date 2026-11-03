@@ -497,15 +497,11 @@ function AdminWorkspace({ email, onLogout }) {
   };
 
   const handleDeleteMember = async (member) => {
+    if (!member?._id) return;
     if (!window.confirm(t('admin.confirmDeleteMember'))) return;
     const memberId = member.id || member._id;
     try {
-      if (member._id) {
-        await deleteTeamMember(member._id);
-      } else {
-        setNotice(t('admin.teamSaveFailed'));
-        return;
-      }
+      await deleteTeamMember(member._id);
     } catch {
       setNotice(t('admin.teamSaveFailed'));
       return;
@@ -948,6 +944,7 @@ function AdminWorkspace({ email, onLogout }) {
                                 type="button"
                                 className="btn sm"
                                 style={{ padding: '0.3rem 0.7rem', background: '#FFEBEE', color: '#C62828', border: 'none' }}
+                                disabled={!m._id}
                                 onClick={() => handleDeleteMember(m)}
                               >
                                 {t('admin.deleteMember')}
