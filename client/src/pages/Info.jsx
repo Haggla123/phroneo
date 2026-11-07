@@ -5,10 +5,32 @@ import { useSEO } from '../hooks.js';
 import { Section, PageHead } from '../components/UI.jsx';
 import { fetchLegalPages } from '../api.js';
 
+import { SITE } from '../config.js';
+
+const FALLBACK_PRIVACY = {
+  de: `# Entwurf der Datenschutzhinweise\n\nDies ist ein Arbeitsentwurf für PHRONEO PROJECT.\n\n## 1. Verantwortliche Stelle\nPHRONEO PROJECT\nE-Mail: izuwatopmann7@gmail.com\n\n## 2. Erhebung und Speicherung personenbezogener Daten\nWenn du unsere Website besuchst oder über unsere Formulare Interesse bekundest oder Kontakt aufnimmst, erheben wir nur die Daten, die du uns freiwillig mitteilst (z.B. Name, E-Mail-Adresse, Interessensbereiche und Nachricht).\n\n## 3. Zweck der Verarbeitung\nDie Datenverarbeitung dient ausschließlich der Beantwortung deiner Anfragen, der Organisation von Programmen und Mentoring sowie der Information über zukünftige Angebote, sofern gewünscht.\n\n## 4. Deine Rechte\nDu hast jederzeit das Recht auf Auskunft über deine bei uns gespeicherten Daten, deren Berichtigung oder Löschung. Wende dich hierzu gerne an izuwatopmann7@gmail.com.`,
+  en: `# Privacy Notice (Working Draft)\n\nThis is a working draft for PHRONEO PROJECT.\n\n## 1. Controller & Contact\nPHRONEO PROJECT\nEmail: izuwatopmann7@gmail.com\n\n## 2. Collection and Processing of Personal Data\nWhen you visit our website, submit an expression of interest, or contact us through our forms, we only process the personal information you voluntarily provide (e.g., name, email address, program interests, and message).\n\n## 3. Purpose of Processing\nData is used solely to respond to your inquiries, organize cohorts and mentoring, and share updates about upcoming programs if requested.\n\n## 4. Your Rights\nYou have the right to request access to, rectification, or deletion of your stored personal information at any time. Feel free to contact izuwatopmann7@gmail.com.`
+};
+
 function useLegalPages() {
   const [data, setData] = useState(null);
   const [failed, setFailed] = useState(false);
-  useEffect(() => { let alive = true; fetchLegalPages().then((result) => { if (alive) setData(result); }).catch(() => { if (alive) setFailed(true); }); return () => { alive = false; }; }, []);
+  useEffect(() => {
+    let alive = true;
+    fetchLegalPages()
+      .then((result) => { if (alive) setData(result); })
+      .catch(() => {
+        if (alive) {
+          setData({
+            legalInfo: SITE.legal,
+            privacyPolicy: FALLBACK_PRIVACY,
+            imprintApproved: false,
+            privacyApproved: false
+          });
+        }
+      });
+    return () => { alive = false; };
+  }, []);
   return { data, failed };
 }
 function LegalCopy({ text }) {

@@ -79,6 +79,11 @@ function FormShell({ kind, extra, withAge, withMessage, requireName = true, requ
       setV({ ...v, name: '', email: '', age: '', message: '', consent: false });
       onSuccess?.();
     } catch {
+      try {
+        const local = JSON.parse(localStorage.getItem('phroneo_offline_submissions') || '[]');
+        local.push({ kind, ...v, id: 'offline-' + Date.now(), createdAt: new Date().toISOString() });
+        localStorage.setItem('phroneo_offline_submissions', JSON.stringify(local));
+      } catch {}
       setSt('fail');
     }
   };

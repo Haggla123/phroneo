@@ -1128,7 +1128,7 @@ function AdminWorkspace({ email, onLogout }) {
                   {t('admin.cmsProxyLead')}
                 </p>
                 <a
-                  href="/admin/index.html"
+                  href="/cms/index.html"
                   className="btn btn-navy"
                   target="_blank"
                   rel="noreferrer"
