@@ -170,7 +170,7 @@ export default {
     loadError: 'Erfahrungsberichte können gerade nicht geladen werden.',
     emptyNotice: 'Wir bereiten freigegebene Erfahrungsberichte vor. Bitte schau später wieder vorbei.',
     h1: 'Erfahrungen & Gemeinschaft',
-    lead: 'Wir bereiten Erfahrungsberichte zur Veröffentlichung vor. Schau bald wieder vorbei, um mehr über die Gemeinschaft zu erfahren.',
+    lead: 'Echte Geschichten junger Erwachsener, die durch PHRONEO Klarheit, Orientierung und Gemeinschaft gefunden haben.',
     items: [],
     ctaTitle: 'Schreibe dein eigenes Kapitel',
     ctaText: 'Werde Teil einer wachsenden Gemeinschaft, die sich gegenseitig stärkt.',
@@ -178,9 +178,11 @@ export default {
   },
   impulses: {
     h1: 'Impulse für dein Denken',
-    lead: 'Kurze, gehaltvolle Beiträge über Glauben, Denkgewohnheiten, emotionale Gesundheit und Lebensentscheidungen.',
+    lead: 'Kurze, gehaltvolle Beiträge über Mindset, persönliche Gewohnheiten, emotionale Gesundheit und Lebensentscheidungen.',
     filterAll: 'Alle Themen',
     readTime: 'Min. Lesezeit',
+    readMore: 'Weiterlesen →',
+    readLess: '↑ Weniger anzeigen',
     items: [
       {
         id: 'identitaet-und-leistung',
@@ -188,8 +190,8 @@ export default {
         title: 'Wer bist du ohne deinen Erfolg?',
         date: '2026-10-15',
         read: '5',
-        summary: 'Warum wir in einer Leistungsgesellschaft so oft Erschöpfung mit Hingabe verwechseln und wie das Evangelium uns einen unerschütterlichen Wert schenkt.',
-        content: 'Viele junge Erwachsene wachsen mit der unausgesprochenen Botschaft auf: Du bist, was du leistest. Doch die christliche Botschaft dreht diese Logik um: Du bist geliebt, darum darfst du mit Freude und Freiheit gestalten. Die Erneuerung des Verstandes beginnt dort, wo wir aufhören, unseren Wert durch äußere Anerkennung zu beweisen.'
+        summary: 'Warum wir in einer Leistungsgesellschaft so oft Erschöpfung mit Hingabe verwechseln und wie wir ein unerschütterliches Selbstwertgefühl aufbauen.',
+        content: 'Viele junge Erwachsene wachsen mit der unausgesprochenen Botschaft auf: Du bist nur, was du leistest. Doch wahres Wachstum beginnt dort, wo wir diese Logik durchbrechen: Dein Wert als Mensch hängt nicht von ständiger Leistung oder Bestätigung ab. Das schenkt dir die Freiheit, mit echter Gelassenheit, Klarheit und Freude zu gestalten.'
       },
       {
         id: 'entscheidungen-treffen',
@@ -197,17 +199,17 @@ export default {
         title: 'Vom Zwang der perfekten Entscheidung',
         date: '2026-09-28',
         read: '6',
-        summary: 'Entscheidungsangst lähmt viele Zwanzigjährige. Wie biblische Weisheit uns hilft, kluge Schritte im Vertrauen statt in Perfektionismus zu gehen.',
-        content: 'Gottes Wille ist selten ein unsichtbarer, schmaler Seiltanz, bei dem ein Fehltritt in die Katastrophe führt. Die Bibel beschreibt Führung oft eher wie eine weite Weide: Gott schenkt Weisheit, Verstand und Freiheit, um im Rahmen seiner Liebe mutige Schritte zu wagen.'
+        summary: 'Entscheidungsangst lähmt viele junge Menschen. Wie klare Werte und praktische Weisheit uns helfen, mutige Schritte im Vertrauen statt in Perfektionismus zu gehen.',
+        content: 'Den eigenen Lebensweg zu finden ist selten ein schmaler Seiltanz, bei dem ein Fehltritt die Katastrophe bedeutet. Echte Orientierung entsteht im Gehen: durch klare Werte, gesunden Menschenverstand und den Mut, erste wichtige Schritte zu wagen.'
       },
       {
         id: 'mentale-gewohnheiten',
         category: 'Gewohnheiten',
-        title: 'Die Macht kleiner geistlicher Routinen',
+        title: 'Die Macht kleiner täglicher Routinen',
         date: '2026-09-10',
         read: '4',
-        summary: 'Wie 10 Minuten Stille, Dankbarkeit und Schriftmeditation am Morgen deine neurobiologischen Reaktionen im stressigen Alltag transformieren.',
-        content: 'Neurowissenschaft und Schriftlesung stimmen überein: Unser Gehirn verändert sich durch das, worauf wir wiederholt unsere Aufmerksamkeit richten. Wenn wir den Tag mit Gottes Wort statt mit Push-Nachrichten beginnen, verankern wir unseren Geist im Frieden.'
+        summary: 'Wie 10 Minuten Stille, Dankbarkeit und morgendliche Reflexion deine Stressreaktionen im Alltag nachhaltig verändern.',
+        content: 'Neurowissenschaft und praktische Lebensweisheit stimmen überein: Unser Gehirn verändert sich durch das, worauf wir täglich unsere Aufmerksamkeit richten. Wenn wir den Tag mit bewusster Stille und Reflexion beginnen, verankern wir unseren Geist in Klarheit und innerem Frieden.'
       }
     ]
   },
@@ -243,7 +245,7 @@ export default {
   },
   join: {
     h1: 'Dein Weg zu persönlichem Wachstum beginnt hier.',
-    lead: 'Werde Teil der PHRONEO PROJECT Community und entdecke neue Wege für geistliches Wachstum, persönliche Entwicklung und ein erneuertes Denken. Lass uns gemeinsam wachsen.',
+    lead: 'Werde Teil der PHRONEO PROJECT Community und entdecke neue Wege für persönliche Entwicklung, Klarheit und ein erneuertes Denken. Lass uns gemeinsam wachsen.',
     reassurance: 'Mit diesem Formular bekundest du dein Interesse an der Community. Es entsteht dadurch weder eine kostenpflichtige Mitgliedschaft noch ein Benutzerkonto.',
     nameOptional: 'Vollständiger Name (optional)',
     namePlaceholder: 'Gib deinen vollständigen Namen ein.',
@@ -251,16 +253,16 @@ export default {
     interestLabel: 'Wofür interessierst du dich?',
     options: {
       community: 'Teil der PHRONEO PROJECT Community werden',
-      spiritual_growth: 'Geistliches Wachstum und Bibelstudium',
+      spiritual_growth: 'Mindset-Erneuerung und persönliches Wachstum',
       personal_development: 'Persönliche Entwicklung',
-      mentoring: 'Mentoring und Jüngerschaft',
+      mentoring: 'Mentoring und Potenzialentfaltung',
       courses_workshops: 'Kurse und Workshops',
       exploring: 'Anderes / Ich orientiere mich noch'
     },
     moreLabel: 'Erzähl uns gern etwas mehr (optional)',
     morePlaceholder: 'Was möchtest du entdecken oder lernen?',
     emailUpdates: 'Ich möchte gelegentlich Neuigkeiten zu Aktivitäten und kommenden Programmen von PHRONEO PROJECT erhalten.',
-    privacyNote: 'Wir verwenden deine Angaben, um auf dein Interesse zu antworten. Hier findest du unsere',
+    privacyNote: 'Wir verwenden deine Angaben, um auf deine Anfrage zu antworten. Hier findest du unsere',
     submit: 'Interesse bekunden',
     successTitle: 'Vielen Dank für dein Interesse!',
     successText: 'Schön, dass du mit PHRONEO PROJECT in Verbindung treten möchtest. Deine Angaben wurden erfolgreich übermittelt. Wir freuen uns darauf, dich auf deinem Wachstumsweg zu begleiten.',
@@ -271,13 +273,13 @@ export default {
   },
   contact: {
     h1: 'Kontakt aufnehmen',
-    lead: 'Fragen zu Programmen, Mentoring oder Kooperationen? Schreib uns gerne – wir freuen uns auf den Austausch.',
+    lead: 'Fragen zu Programmen, Mentoring oder Kooperationen? Schreib uns gerne, wir freuen uns auf den Austausch.',
     helpTitle: 'Wir sind für dich da',
     helpText: 'Fragen zu unseren Programmen, Mentoring oder Kooperationen? Schreib uns, wir melden uns bei dir.',
     emailLabel: 'E-Mail',
     whatsappLabel: 'WhatsApp',
     brand: 'PHRONEO PROJECT',
-    tagline: 'Gemeinsam wachsen in Glaube und Berufung.',
+    tagline: 'Gemeinsam wachsen in Klarheit und Berufung.',
     message: 'Deine Nachricht'
   },
   form: {

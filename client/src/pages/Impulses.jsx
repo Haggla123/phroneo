@@ -22,18 +22,21 @@ export default function Impulses() {
 
       <Section>
         {/* Category Filter Pills */}
-        <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              type="button"
-              className={`btn sm ${activeCategory === cat ? 'btn-navy' : 'btn-ghost'}`}
-              style={activeCategory !== cat ? { color: 'var(--navy)', borderColor: 'var(--line)' } : {}}
-              onClick={() => setActiveCategory(cat)}
-            >
-              {cat === 'all' ? t('impulses.filterAll') : cat}
-            </button>
-          ))}
+        <div className="filter-pills-bar" role="toolbar" aria-label={t('impulses.filterAll')}>
+          {categories.map((cat) => {
+            const isActive = activeCategory === cat;
+            return (
+              <button
+                key={cat}
+                type="button"
+                className={`filter-pill ${isActive ? 'active' : ''}`}
+                onClick={() => setActiveCategory(cat)}
+                aria-pressed={isActive}
+              >
+                {cat === 'all' ? t('impulses.filterAll') : cat}
+              </button>
+            );
+          })}
         </div>
 
         {/* Impulses Grid */}
@@ -42,36 +45,36 @@ export default function Impulses() {
             <article key={item.id} className="impulse-card">
               <div className="impulse-top">
                 <span className="badge">{item.category}</span>
-                <span style={{ fontSize: '0.82rem', color: 'var(--muted)' }}>
+                <span style={{ fontSize: '0.85rem', color: 'var(--muted)', fontWeight: '500' }}>
                   {item.read} {t('impulses.readTime')}
                 </span>
               </div>
-              <time dateTime={item.date} style={{ fontSize: '0.82rem', color: 'var(--muted-light)', display: 'block', marginBottom: '0.4rem' }}>
+              <time dateTime={item.date} style={{ fontSize: '0.82rem', color: 'var(--muted-light)', display: 'block', marginBottom: '0.5rem' }}>
                 {date(item.date)}
               </time>
-              <h3>{item.title}</h3>
-              <p>{item.summary}</p>
+              <h3 style={{ fontSize: '1.4rem', lineHeight: '1.3', marginBottom: '0.75rem' }}>{item.title}</h3>
+              <p style={{ lineHeight: '1.65', color: 'var(--muted)' }}>{item.summary}</p>
 
               {expandedId === item.id ? (
-                <div style={{ marginTop: '1.2rem', paddingTop: '1.2rem', borderTop: '1px solid var(--line)', color: 'var(--ink)', lineHeight: '1.7' }}>
+                <div style={{ marginTop: '1.25rem', paddingTop: '1.25rem', borderTop: '1px solid var(--line)', color: 'var(--ink)', lineHeight: '1.75' }}>
                   <p>{item.content}</p>
                   <button
                     type="button"
-                    className="more"
-                    style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+                    className="impulse-read-more"
                     onClick={() => setExpandedId(null)}
+                    aria-expanded="true"
                   >
-                    ↑ Weniger anzeigen
+                    <span>{t('impulses.readLess') || '↑ Weniger anzeigen'}</span>
                   </button>
                 </div>
               ) : (
                 <button
                   type="button"
-                  className="more"
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, marginTop: '1rem' }}
+                  className="impulse-read-more"
                   onClick={() => setExpandedId(item.id)}
+                  aria-expanded="false"
                 >
-                  Weiterlesen →
+                  <span>{t('impulses.readMore') || 'Weiterlesen →'}</span>
                 </button>
               )}
             </article>

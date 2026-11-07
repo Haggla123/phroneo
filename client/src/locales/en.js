@@ -170,7 +170,7 @@ export default {
     loadError: 'Stories could not be loaded right now.',
     emptyNotice: 'We are preparing stories approved for publication. Please check back soon.',
     h1: 'Stories & Community',
-    lead: 'We are preparing participant stories for publication. Check back soon to read about the community.',
+    lead: 'Real stories from young adults discovering clarity, purpose, and community through PHRONEO.',
     items: [],
     ctaTitle: 'Write Your Own Chapter',
     ctaText: 'Join a growing community committed to living with purpose and renewed vision.',
@@ -178,9 +178,11 @@ export default {
   },
   impulses: {
     h1: 'Impulses for the Mind',
-    lead: 'Short, impactful reflections on faith, mental habits, emotional health, and decision-making.',
+    lead: 'Short, impactful reflections on mindset, daily habits, emotional health, and decision-making.',
     filterAll: 'All Topics',
     readTime: 'min read',
+    readMore: 'Read more →',
+    readLess: '↑ Show less',
     items: [
       {
         id: 'identitaet-und-leistung',
@@ -188,8 +190,8 @@ export default {
         title: 'Who are you without your achievements?',
         date: '2026-10-15',
         read: '5',
-        summary: 'Why in a hyper-performance culture we confuse exhaustion with faithfulness, and how the Gospel gives an unshakable identity.',
-        content: 'Many young adults carry the unspoken belief: You are what you produce. The Christian message reverses this entirely: You are unconditionally loved, therefore you are free to build and create with joy. Mental renewal starts when we stop proving our worth to the world.'
+        summary: 'Why in a hyper-performance culture we confuse exhaustion with purpose, and how to build an unshakable identity.',
+        content: 'Many young adults carry the unspoken belief: You are only what you produce. Real transformation begins when we break free from this logic: your inherent worth as a person is not defined by constant output or external validation. Recognizing this gives you the freedom to build, lead, and create with authentic clarity, confidence, and joy.'
       },
       {
         id: 'entscheidungen-treffen',
@@ -197,17 +199,17 @@ export default {
         title: 'Free from the paralysis of the “perfect” choice',
         date: '2026-09-28',
         read: '6',
-        summary: 'Decision paralysis traps many twenty-somethings. How biblical wisdom frees us to take steps in confidence rather than perfectionism.',
-        content: 'God’s will is rarely a tightrope where one step off spells doom. Scripture describes guidance more like a vast, green pasture: God provides wisdom, reason, and freedom to take courageous steps within the safety of His love.'
+        summary: 'Decision paralysis traps many twenty-somethings. How practical wisdom and clear values free us to take bold steps with confidence.',
+        content: 'Finding your path is rarely a high-stakes tightrope where one misstep spells disaster. Real purpose is cultivated through action and exploration: developing sound judgment, clear values, and the courage to take meaningful steps forward in peace rather than perfectionism.'
       },
       {
         id: 'mentale-gewohnheiten',
         category: 'Habits',
-        title: 'The power of small spiritual micro-habits',
+        title: 'The power of small daily micro-habits',
         date: '2026-09-10',
         read: '4',
-        summary: 'How 10 minutes of morning silence, gratitude, and scripture reshape neurobiological stress patterns for the entire day.',
-        content: 'Modern neuroscience and ancient Scripture agree: what we consistently fix our attention on transforms our brain. Starting the day anchored in God’s truth rather than notifications anchors our nervous system in lasting peace.'
+        summary: 'How 10 minutes of morning silence, reflection, and gratitude reshape stress patterns for the entire day.',
+        content: 'Modern neuroscience and practical wisdom agree: what we consistently fix our attention on transforms our neural pathways. Starting the day with intentional pause and focused reflection anchors our mindset in lasting clarity, calmness, and focus.'
       }
     ]
   },
@@ -243,41 +245,41 @@ export default {
   },
   join: {
     h1: 'Your journey of growth starts here.',
-    lead: 'Join the PHRONEO PROJECT community and take a step toward spiritual growth, personal development, and a renewed way of thinking. Let’s grow together.',
+    lead: 'Join the PHRONEO PROJECT community and take a step toward personal growth, purpose, and a renewed way of thinking. Let’s grow together.',
     reassurance: 'This form expresses interest in the community. It does not create a paid membership or a user account.',
     nameOptional: 'Full name (optional)',
-    namePlaceholder: 'Enter your full name.',
+    namePlaceholder: 'Enter your full name',
     emailPlaceholder: 'you@example.com',
     interestLabel: 'What are you interested in?',
     options: {
       community: 'Joining the PHRONEO PROJECT community',
-      spiritual_growth: 'Spiritual growth and Bible study',
+      spiritual_growth: 'Mindset renewal and personal growth',
       personal_development: 'Personal development',
-      mentoring: 'Mentoring and discipleship',
+      mentoring: 'Mentoring and leadership development',
       courses_workshops: 'Courses and workshops',
       exploring: 'Other / still exploring'
     },
     moreLabel: 'Tell us a little more (optional)',
     morePlaceholder: 'What would you like to explore or learn?',
     emailUpdates: 'I would like to receive occasional updates about PHRONEO PROJECT activities and upcoming programs.',
-    privacyNote: 'We’ll use the details you share to respond to your interest. See our',
-    submit: 'Express My Interest',
+    privacyNote: 'We use your information to respond to your inquiry. You can review our',
+    submit: 'Express Interest',
     successTitle: 'Thank you for your interest!',
     successText: 'We’re glad you’d like to connect with PHRONEO PROJECT. Your details have been submitted successfully. We look forward to being part of your growth journey.',
     homeLink: 'Return to homepage',
-    program: 'Selected Program',
-    choose: 'Please choose',
+    program: 'Desired program',
+    choose: 'Please select an area of interest',
     general: 'General Interest / Undecided'
   },
   contact: {
     h1: 'Get in Touch',
-    lead: 'Questions about our programs, mentoring, or partnership? Send us a message – we would love to hear from you.',
+    lead: 'Questions about our programs, mentoring, or partnership? Send us a message, we would love to hear from you.',
     helpTitle: 'We’re here to help',
     helpText: 'Questions about our programs, mentoring, or partnership? Send us a message and we’ll get back to you.',
     emailLabel: 'Email',
     whatsappLabel: 'WhatsApp',
     brand: 'PHRONEO PROJECT',
-    tagline: 'Growing together in faith and purpose.',
+    tagline: 'Growing together in clarity and purpose.',
     message: 'Your Message'
   },
   form: {
