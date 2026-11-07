@@ -9,7 +9,6 @@ const savedLegal = (() => {
 })();
 
 export const SITE = {
-  formEndpoint: import.meta.env.VITE_FORM_ENDPOINT || '',
   legal: savedLegal || {
     name: '',
     form: '',

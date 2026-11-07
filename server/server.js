@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { connectDB } from './config/db.js';
+import { getAllowedOrigins, isAllowedOrigin } from './lib/allowedOrigins.js';
 import programsRoutes from './routes/programs.js';
 import teamRoutes from './routes/team.js';
 import submissionsRoutes from './routes/submissions.js';
@@ -29,17 +30,11 @@ if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32) {
 }
 
 // Middleware
-const allowedOrigins = [
-  process.env.FRONTEND_URL,
-  'http://localhost:5173',
-  'http://localhost:4173',
-  'https://phroneo.vercel.app'
-].filter(Boolean).flatMap((o) => o.split(',').map((s) => s.trim()));
+const allowedOrigins = getAllowedOrigins(process.env.FRONTEND_URL, { production: process.env.NODE_ENV === 'production' });
 
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
+    if (isAllowedOrigin(origin, allowedOrigins)) {
       return callback(null, true);
     }
     return callback(null, false);

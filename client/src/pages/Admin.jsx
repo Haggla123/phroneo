@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { LangSwitch } from '../components/Header.jsx';
 import { Logo } from '../components/Header.jsx';
 import { useSEO, usePrograms, updateProgramsCache, useTeam, updateTeamCache, useLoc } from '../hooks.js';
-import { SITE } from '../config.js';
 import {
   loginAdmin,
   verifyToken,

@@ -295,7 +295,6 @@ export default {
     age_: 'Bitte gib ein Alter zwischen 18 und 30 an.',
     consent_: 'Bitte stimme der Datenverarbeitung zu.',
     ok: 'Vielen Dank! Deine Anmeldung/Nachricht ist erfolgreich eingegangen. Wir melden uns in Kürze.',
-    off: 'Hinweis: Das Formular ist lokal gespeichert (im Admin-Bereich einsehbar). Sobald VITE_FORM_ENDPOINT gesetzt ist, wird es auch per Mail/Webhook übermittelt.',
     fail: 'Übermittlung fehlgeschlagen. Bitte versuche es später erneut oder schreibe uns direkt.',
     requiredNote: 'Mit * markierte Felder sind Pflichtfelder.'
   },

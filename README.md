@@ -25,7 +25,7 @@ To email contact requests through Gmail, use `smtp.gmail.com` on port `587`, the
 - Program fallback content: `public/content/programs.json`. `npm run seed:programs` upserts those records and preserves records not in the JSON file.
 - Page copy: `client/src/locales/de.js` and `client/src/locales/en.js`.
 - Team fallback content: `public/content/team.json`.
-- Decap CMS config: `public/admin/config.yml`. CMS publishing is not operational until a Git provider and authentication backend are configured for the chosen host.
+- Decap CMS config: `public/cms/config.yml`. CMS publishing is not operational until a Git provider and authentication backend are configured for the chosen host.
 - Stories are managed in **Admin → Stories editor**. Enter both German and English text, record the participant's explicit publication consent, then choose whether to publish. Drafts are not returned by the public site API.
 - Privacy Policy and Impressum are managed in **Admin → Site settings** and saved in MongoDB for all visitors. They remain visibly marked as drafts until an administrator completes and reviews them; editing a page clears its reviewed state.
 
@@ -35,6 +35,7 @@ To email contact requests through Gmail, use `smtp.gmail.com` on port `587`, the
 - Confirm donation eligibility language and provide verified bank/payment details. The site now directs visitors to Contact instead of displaying unverified account details.
 - Confirm that the program descriptions, team bios/photos, and testimonials are genuine and approved for publication. Do not present sample testimonials as real.
 - Configure production `VITE_API_URL`, `MONGODB_URI`, a unique `JWT_SECRET`, and an exact `FRONTEND_URL`; use HTTPS and a managed database with backups.
+- `vercel.json` currently deploys the Vite SPA only. Deploy the Express API as a separate service and set `VITE_API_URL` to its HTTPS `/api` endpoint; do not rely on the local development fallback in production.
 - Configure CMS authentication or remove/disable CMS access on the production site.
 - Run browser/screen-reader accessibility and responsive checks on the intended production host, and agree on data retention/deletion rules for inquiries.
 

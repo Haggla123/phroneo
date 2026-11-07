@@ -295,7 +295,6 @@ export default {
     age_: 'Please enter an age between 18 and 30.',
     consent_: 'Please consent to data processing.',
     ok: 'Thank you! Your registration/message has been received. We will be in touch shortly.',
-    off: 'Note: Saved locally (viewable in the Admin Portal). When VITE_FORM_ENDPOINT is configured, entries will also be emailed.',
     fail: 'Submission failed. Please try again or reach out directly.',
     requiredNote: 'Fields marked with * are required.'
   },

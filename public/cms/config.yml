@@ -1,7 +1,5 @@
 # Decap CMS Configuration
 # For local editing: run `npx decap-server` and open /admin/index.html
-local_backend: true
-
 backend:
   name: git-gateway
   branch: main

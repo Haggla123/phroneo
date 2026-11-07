@@ -3,7 +3,6 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSEO, usePrograms, useLoc } from '../hooks.js';
 import { Section, PageHead } from '../components/UI.jsx';
-import { SITE } from '../config.js';
 import { createSubmission } from '../api.js';
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -79,11 +78,6 @@ function FormShell({ kind, extra, withAge, withMessage, requireName = true, requ
       setV({ ...v, name: '', email: '', age: '', message: '', consent: false });
       onSuccess?.();
     } catch {
-      try {
-        const local = JSON.parse(localStorage.getItem('phroneo_offline_submissions') || '[]');
-        local.push({ kind, ...v, id: 'offline-' + Date.now(), createdAt: new Date().toISOString() });
-        localStorage.setItem('phroneo_offline_submissions', JSON.stringify(local));
-      } catch {}
       setSt('fail');
     }
   };
@@ -183,7 +177,6 @@ function FormShell({ kind, extra, withAge, withMessage, requireName = true, requ
       </button>
       <div role="status" aria-live="polite" className={'msg ' + st}>
         {st === 'ok' && t('form.ok')}
-        {st === 'off' && t('form.off')}
         {st === 'fail' && t('form.fail')}
       </div>
     </form>
