@@ -722,7 +722,7 @@ function AdminWorkspace({ email, onLogout }) {
 
                 <div className="admin-insight-grid">
                   <section className="admin-insight-card"><div className="admin-insight-heading"><div><h3>{t('admin.communityActivity')}</h3><p>{t('admin.activitySubtitle')}</p></div><button type="button" className="more admin-view-all" onClick={() => { setSubmissionFilter('all'); setActiveTab('submissions'); }}>{t('admin.viewInbox')} →</button></div><div className="admin-activity"><div className="admin-donut" style={{'--signup-share': `${submissions.length ? signupsCount / submissions.length * 100 : 0}%`}}><span><b>{submissions.length}</b><small>{t('admin.total')}</small></span></div><div className="admin-legend"><div><i className="signup-dot"/><span>{t('admin.programApplications')}</span><b>{signupsCount}</b></div><div><i className="contact-dot"/><span>{t('admin.contactMessages')}</span><b>{contactsCount}</b></div><div><i className="resolved-dot"/><span>{t('admin.completed')}</span><b>{submissions.filter((x) => x.status === 'done').length}</b></div></div></div></section>
-                  <section className="admin-insight-card"><div className="admin-insight-heading"><div><h3>{t('admin.navPrograms')}</h3><p>{t('admin.latestPrograms')}</p></div><button type="button" className="more admin-view-all" onClick={() => setActiveTab('programs')}>{t('admin.viewAll')} →</button></div>{programsList.length ? <div className="admin-upcoming-list">{programsList.slice(0, 3).map((program) => <div className="admin-upcoming" key={program.slug}><span className="admin-program-icon">◈</span><span><b>{program.title?.de || program.title?.en || program.slug}</b><small>{program.start || '—'}</small></span><span className="admin-program-arrow">↗</span></div>)}</div> : <p className="admin-empty">{t('admin.noPrograms')}</p>}</section>
+                  <section className="admin-insight-card"><div className="admin-insight-heading"><div><h3>{t('admin.navPrograms')}</h3><p>{t('admin.latestPrograms')}</p></div><button type="button" className="more admin-view-all" onClick={() => setActiveTab('programs')}>{t('admin.viewAll')} →</button></div>{programsList.length ? <div className="admin-upcoming-list">{programsList.slice(0, 3).map((program) => <div className="admin-upcoming" key={program.slug}><span className="admin-program-icon">◈</span><span><b>{program.title?.de || program.title?.en || program.slug}</b><small>{program.start || '-'}</small></span><span className="admin-program-arrow">↗</span></div>)}</div> : <p className="admin-empty">{t('admin.noPrograms')}</p>}</section>
                 </div>
 
                 <div className="admin-section-heading">
@@ -762,7 +762,7 @@ function AdminWorkspace({ email, onLogout }) {
                             <td><strong>{sub.name || t('admin.anonymousName')}</strong></td>
                             <td><a href={'mailto:' + sub.email}>{sub.email}</a></td>
                             <td style={{ maxWidth: '280px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                              {sub.program ? `[${sub.program}] ` : ''}{sub.interest ? `· ${sub.interest} ` : ''}{sub.message || '–'}
+                              {sub.program ? `[${sub.program}] ` : ''}{sub.interest ? `· ${sub.interest} ` : ''}{sub.message || '-'}
                             </td>
                             <td>
                               {sub.kind === 'contact' && <button
@@ -772,7 +772,7 @@ function AdminWorkspace({ email, onLogout }) {
                                 onClick={() => handleResendContactEmail(sub.id)}
                                 title={t('admin.resendContactEmail')}
                               >{resendingId === sub.id ? '…' : t('admin.resendContactEmail')}</button>}
-                              {sub.kind !== 'contact' ? '–' : t(`admin.emailDelivery_${sub.emailDeliveryStatus || 'pending'}`)}
+                              {sub.kind !== 'contact' ? '-' : t(`admin.emailDelivery_${sub.emailDeliveryStatus || 'pending'}`)}
                             </td>
                             <td>
                               <select className={`admin-status-select status-${sub.status}`} aria-label={t('admin.changeStatus')} title={t('admin.statusHelp')} value={sub.status} onChange={(event) => setSubmissionStatus(sub.id, event.target.value)}>
@@ -928,8 +928,8 @@ function AdminWorkspace({ email, onLogout }) {
                                 {bioDe}
                               </div>
                             </td>
-                            <td>{roleDe || '—'}</td>
-                            <td>{roleEn || '—'}</td>
+                            <td>{roleDe || '-'}</td>
+                            <td>{roleEn || '-'}</td>
                             <td>{m.order ?? 0}</td>
                             <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>
                               <button
@@ -1047,12 +1047,12 @@ function AdminWorkspace({ email, onLogout }) {
                             </td>
                             <td><strong>{sub.name || t('admin.anonymousName')}</strong></td>
                             <td><a href={'mailto:' + sub.email}>{sub.email}</a></td>
-                            <td>{sub.age || '–'}</td>
-                            <td>{sub.program || '–'}</td>
-                            <td>{sub.interest ? t(`join.options.${sub.interest}`) : '–'}</td>
+                            <td>{sub.age || '-'}</td>
+                            <td>{sub.program || '-'}</td>
+                            <td>{sub.interest ? t(`join.options.${sub.interest}`) : '-'}</td>
                             <td>{sub.emailUpdates ? t('admin.optedIn') : t('admin.notOptedIn')}</td>
                             <td>
-                              {sub.kind !== 'contact' ? '–' : <div className="admin-email-delivery">
+                              {sub.kind !== 'contact' ? '-' : <div className="admin-email-delivery">
                                 <span>{t(`admin.emailDelivery_${sub.emailDeliveryStatus || 'pending'}`)}</span>
                                 <button type="button" className="admin-resend-button" disabled={resendingId === sub.id} onClick={() => handleResendContactEmail(sub.id)}>
                                   {resendingId === sub.id ? '…' : t('admin.resendContactEmail')}
@@ -1060,7 +1060,7 @@ function AdminWorkspace({ email, onLogout }) {
                               </div>}
                             </td>
                             <td style={{ maxWidth: '300px', lineHeight: '1.4', fontSize: '0.9rem' }}>
-                              {sub.message || '–'}
+                              {sub.message || '-'}
                             </td>
                             <td>
                               <select className={`admin-status-select status-${sub.status}`} aria-label={t('admin.changeStatus')} title={t('admin.statusHelp')} value={sub.status} onChange={(event) => setSubmissionStatus(sub.id, event.target.value)}>
@@ -1102,7 +1102,7 @@ function AdminWorkspace({ email, onLogout }) {
                   {adminError && <div className="alert" role="alert">{adminError}</div>}
                   <button className="btn btn-navy sm" disabled={adminBusy}>{adminBusy ? '…' : t('admin.createAccount')}</button>
                 </form>
-                <div className="admin-account-list"><h4>{t('admin.currentAdmins')}</h4><div className="table-responsive"><table className="admin-table"><thead><tr><th>{t('admin.email')}</th><th>{t('admin.date')}</th><th>{t('admin.columnActions')}</th></tr></thead><tbody>{admins.map((admin) => <tr key={admin._id}><td><strong>{admin.email}</strong>{admin.email === email && <span className="admin-you-badge">{t('admin.you')}</span>}</td><td>{admin.createdAt ? date(admin.createdAt) : '—'}</td><td><button type="button" className="btn sm admin-remove-account" disabled={admin.email === email || admins.length <= 1} onClick={() => handleDeleteAdmin(admin)}>{t('admin.removeAdmin')}</button></td></tr>)}</tbody></table></div></div>
+                <div className="admin-account-list"><h4>{t('admin.currentAdmins')}</h4><div className="table-responsive"><table className="admin-table"><thead><tr><th>{t('admin.email')}</th><th>{t('admin.date')}</th><th>{t('admin.columnActions')}</th></tr></thead><tbody>{admins.map((admin) => <tr key={admin._id}><td><strong>{admin.email}</strong>{admin.email === email && <span className="admin-you-badge">{t('admin.you')}</span>}</td><td>{admin.createdAt ? date(admin.createdAt) : '-'}</td><td><button type="button" className="btn sm admin-remove-account" disabled={admin.email === email || admins.length <= 1} onClick={() => handleDeleteAdmin(admin)}>{t('admin.removeAdmin')}</button></td></tr>)}</tbody></table></div></div>
               </div>
             )}
 

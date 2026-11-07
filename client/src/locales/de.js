@@ -26,7 +26,7 @@ export default {
     adminLink: 'Admin-Bereich'
   },
   seo: {
-    home: 'PHRONEO – Erneuere deinen Verstand',
+    home: 'PHRONEO - Erneuere deinen Verstand',
     about: 'Über uns · PHRONEO',
     programs: 'Programme · PHRONEO',
     stories: 'Erfahrungsberichte & Gemeinschaft · PHRONEO',
@@ -40,7 +40,7 @@ export default {
     admin: 'Admin Portal · PHRONEO',
     nf: 'Seite nicht gefunden',
     homeD: 'Christliche Persönlichkeitsentwicklung für junge Erwachsene von 18 bis 30 in Deutschland. Erneuere dein Denken, wachse im Glauben.',
-    genD: 'PHRONEO – christliche Persönlichkeitsentwicklung und Gemeinschaft für junge Erwachsene.'
+    genD: 'PHRONEO - christliche Persönlichkeitsentwicklung und Gemeinschaft für junge Erwachsene.'
   },
   home: {
     more: 'Mehr erfahren',
@@ -49,7 +49,7 @@ export default {
     vP: 'PHRONEO PROJECT hilft jungen Erwachsenen, in ihrer Beziehung zu Gott zu wachsen, ihr Denken durch sein Wort zu erneuern, Christus-ähnlichen Charakter zu entwickeln und ihren Glauben im Alltag zu leben.',
     story: 'Unsere Geschichte',
     pK: '02 · Programme',
-    pP: 'Kurse, Mentoring-Gruppen und Workshops – aktuelle und kommende Angebote.',
+    pP: 'Kurse, Mentoring-Gruppen und Workshops - aktuelle und kommende Angebote.',
     jK: '03 · Mitmachen',
     jH: 'Werde Teil der Bewegung',
     jP: 'Melde dein Interesse an, erhalte Neuigkeiten oder starte mit dem nächsten Programm.',
@@ -84,7 +84,7 @@ export default {
     all: 'Alle Programme ansehen',
     verseKicker: 'Unser biblischer Leitvers',
     verseRef: 'Römer 12,2 (Neues Leben / NGÜ)',
-    verseText: '„Passt euch nicht den Maßstäben dieser Welt an, sondern lasst euch von Gott verwandeln, indem euer Denken erneuert wird. Dann könnt ihr prüfen und erkennen, was Gottes Wille ist – was gut, wohlgefällig und vollkommen ist.“',
+    verseText: '„Passt euch nicht den Maßstäben dieser Welt an, sondern lasst euch von Gott verwandeln, indem euer Denken erneuert wird. Dann könnt ihr prüfen und erkennen, was Gottes Wille ist - was gut, wohlgefällig und vollkommen ist.“',
     imgNote: 'Junge Erwachsene im PHRONEO-Austausch'
   },
   about: {
@@ -308,7 +308,7 @@ export default {
       },
       {
         q: 'Muss ich einer bestimmten christlichen Konfession angehören?',
-        a: 'Nein. PHRONEO ist überkonfessionell aufgestellt und im biblischen Christusglauben gegründet. Ob freikirchlich, evangelisch, katholisch oder noch auf der Suche – du bist herzlich willkommen!'
+        a: 'Nein. PHRONEO ist überkonfessionell aufgestellt und im biblischen Christusglauben gegründet. Ob freikirchlich, evangelisch, katholisch oder noch auf der Suche - du bist herzlich willkommen!'
       },
       {
         q: 'Was kostet die Teilnahme an den Programmen?',
@@ -320,7 +320,7 @@ export default {
       },
       {
         q: 'Wie sieht die Zeiteinteilung aus?',
-        a: 'Unsere Programme sind so konzipiert, dass sie sich hervorragend mit Vollzeitstudium oder Beruf vereinbaren lassen (wöchentlich ca. 2–3 Stunden Zeitaufwand).'
+        a: 'Unsere Programme sind so konzipiert, dass sie sich hervorragend mit Vollzeitstudium oder Beruf vereinbaren lassen (wöchentlich ca. 2-3 Stunden Zeitaufwand).'
       },
       {
         q: 'Wie werden meine personenbezogenen Daten verwendet?',
@@ -339,7 +339,7 @@ export default {
       '3. Zweck und Rechtsgrundlage der Verarbeitung (Art. 6 Abs. 1 lit. a & b DSGVO)',
       '4. Keine Weitergabe von Daten an unberechtigte Dritte',
       '5. Speicherdauer und automatisierte Löschung',
-      '6. Deine Rechte auf Auskunft, Berichtigung, Löschung und Widerruf (Art. 15–21 DSGVO)',
+      '6. Deine Rechte auf Auskunft, Berichtigung, Löschung und Widerruf (Art. 15-21 DSGVO)',
       '7. Keine Tracking-Cookies und keine externen Profiling-Dienste'
     ],
     todo: 'Für weitergehende Auskünfte oder Löschersuchen wende dich jederzeit an unser Datenschutzteam über das Kontaktformular.'

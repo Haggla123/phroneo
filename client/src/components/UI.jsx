@@ -13,7 +13,7 @@ export function ProgramCard({ p }) {
     <div className="card-b">
       <time dateTime={p.start} className="kick">{t('programs.start')}: {date(p.start)}</time>
       <h3>{pick(p.title)}</h3><p>{pick(p.summary)}</p>
-      <Link className="more" to={'/programs/' + p.slug}>{t('programs.details')}<span className="sr"> – {pick(p.title)}</span> →</Link>
+      <Link className="more" to={'/programs/' + p.slug}>{t('programs.details')}<span className="sr"> - {pick(p.title)}</span> →</Link>
     </div></article>);
 }
 export function Status({ s }) {

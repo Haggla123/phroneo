@@ -149,6 +149,20 @@ nav ul a:hover, nav ul a.active { color: var(--white); border-color: var(--gold)
 .btn[disabled] { opacity: .6; cursor: wait; transform: none; box-shadow: none; }
 .btn-ghost { border-color: var(--gold); color: #fff!important; }
 .btn-ghost:hover { background: rgba(199, 168, 108, .18); }
+.hero .btn-ghost {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 2px solid var(--gold) !important;
+  color: #FFFFFF !important;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+.hero .btn-ghost:hover {
+  background: var(--gold) !important;
+  color: var(--navy) !important;
+  border-color: var(--gold) !important;
+}
 
 /* Hero */
 .hero {
@@ -326,6 +340,31 @@ nav ul a:hover, nav ul a.active { color: var(--white); border-color: var(--gold)
 .fm option { color: var(--ink); }
 .fm .err { color: #ffb4ab; }
 .fm .alert, .fm .msg { color: var(--ink); }
+.fm .btn,
+.fm .btn-navy {
+  background: var(--gold) !important;
+  color: var(--navy) !important;
+  font-weight: 700 !important;
+  font-size: 1.05rem !important;
+  border-radius: 10px !important;
+  border: 1.5px solid var(--gold) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35) !important;
+  min-height: 52px !important;
+  letter-spacing: 0.01em;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fm .btn:hover,
+.fm .btn-navy:hover {
+  background: #dfc58e !important;
+  border-color: #dfc58e !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45) !important;
+}
 
 /* Scripture Quote Section */
 .sc { text-align: center; }
@@ -846,7 +885,23 @@ input[aria-invalid=true], textarea[aria-invalid=true] { border-color: #b3261e; }
   nav ul { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
   .hero-in, .detail, .split, .bt-in { grid-template-columns: 1fr; }
   .hero-in { gap: 2.5rem; }
-  .ring { margin: 0 auto; width: min(80%, 300px); }
+  .ring {
+    margin: 0 auto;
+    width: min(80%, 280px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .ring:before {
+    inset: -15px;
+    transform: none !important;
+    margin: auto;
+  }
+  .founder-photo-box::before {
+    inset: -10px;
+    transform: none !important;
+  }
   .fc { grid-template-columns: 1fr; margin-top: -2.5rem; }
   .bt-in { gap: 2.5rem; }
   .facts { position: static; }
@@ -1035,10 +1090,34 @@ input[aria-invalid=true], textarea[aria-invalid=true] { border-color: #b3261e; }
 .join-success h2 { margin-bottom: 10px; color: var(--navy); font-size: clamp(1.7rem,4vw,2.3rem); }
 .join-success p { max-width: 52ch; margin: 0 auto 22px; color: var(--muted); }
 .join-success .btn { border-radius: 8px; }
-.join-form-wrap .btn, .contact-layout .btn {
-  min-height: 48px;
-  font-size: 1rem;
-  font-weight: 600;
+.join-form-wrap .btn {
+  min-height: 52px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 10px;
+  background: var(--navy) !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid var(--navy) !important;
+  box-shadow: 0 4px 16px rgba(20, 35, 59, 0.24) !important;
+  width: 100%;
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+.join-form-wrap .btn:hover {
+  background: var(--gold) !important;
+  border-color: var(--gold) !important;
+  color: var(--navy) !important;
+  box-shadow: 0 6px 22px rgba(199, 168, 108, 0.36) !important;
+  transform: translateY(-2px);
+}
+.contact-layout .btn {
+  min-height: 52px;
+  font-size: 1.05rem;
+  font-weight: 700;
   border-radius: 10px;
 }
 @media(max-width:600px) { .join-form-wrap > .form { padding: 20px 16px; }.join-intro-note { font-size: .88rem; } }

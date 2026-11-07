@@ -26,7 +26,7 @@ export default {
     adminLink: 'Admin Portal'
   },
   seo: {
-    home: 'PHRONEO – Renew Your Mind',
+    home: 'PHRONEO - Renew Your Mind',
     about: 'About Us · PHRONEO',
     programs: 'Programs · PHRONEO',
     stories: 'Stories & Community · PHRONEO',
@@ -40,7 +40,7 @@ export default {
     admin: 'Admin Portal · PHRONEO',
     nf: 'Page not found',
     homeD: 'Christian personal growth and discipleship for young adults aged 18 to 30 in Germany. Renew your thinking, grow in faith.',
-    genD: 'PHRONEO – Christian personal growth and transformative community for young adults.'
+    genD: 'PHRONEO - Christian personal growth and transformative community for young adults.'
   },
   home: {
     more: 'Learn more',
@@ -49,7 +49,7 @@ export default {
     vP: 'PHRONEO PROJECT helps young adults grow in their relationship with God, renew their minds through His Word, develop Christlike character, and live out their faith in everyday life.',
     story: 'Our story',
     pK: '02 · Programs',
-    pP: 'Courses, mentoring groups and workshops – current and upcoming offers.',
+    pP: 'Courses, mentoring groups and workshops - current and upcoming offers.',
     jK: '03 · Join',
     jH: 'Become part of the movement',
     jP: 'Register your interest, get updates, or start with the next program.',
@@ -84,7 +84,7 @@ export default {
     all: 'View all programs',
     verseKicker: 'Our guiding scripture',
     verseRef: 'Romans 12:2 (NIV / ESV)',
-    verseText: '“Do not conform to the pattern of this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what God’s will is—his good, pleasing and perfect will.”',
+    verseText: '“Do not conform to the pattern of this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what God’s will is-his good, pleasing and perfect will.”',
     imgNote: 'Young adults in inspiring conversation at PHRONEO'
   },
   about: {
@@ -308,7 +308,7 @@ export default {
       },
       {
         q: 'Do I need to belong to a specific denomination?',
-        a: 'No. PHRONEO is interdenominational, founded on biblical historic Christian faith. Whether free church, Protestant, Catholic, or exploring faith—you are welcome!'
+        a: 'No. PHRONEO is interdenominational, founded on biblical historic Christian faith. Whether free church, Protestant, Catholic, or exploring faith-you are welcome!'
       },
       {
         q: 'What is the cost of participation?',
@@ -320,7 +320,7 @@ export default {
       },
       {
         q: 'How much time does it require?',
-        a: 'Our programs are structured to fit easily into busy student and work schedules (approx. 2–3 hours per week).'
+        a: 'Our programs are structured to fit easily into busy student and work schedules (approx. 2-3 hours per week).'
       },
       {
         q: 'How is my personal data handled?',
@@ -339,7 +339,7 @@ export default {
       '3. Purpose & Legal Basis (Art. 6(1)(a) & (b) GDPR)',
       '4. Strict No-Sale & No-Unauthorized Third-Party Sharing Policy',
       '5. Retention Schedules and Automatic Deletion',
-      '6. Your Rights to Access, Rectification, Erasure and Objection (Art. 15–21 GDPR)',
+      '6. Your Rights to Access, Rectification, Erasure and Objection (Art. 15-21 GDPR)',
       '7. No Tracking Cookies or Third-Party Behavioral Profiling'
     ],
     todo: 'For any privacy inquiries or data erasure requests, please contact our privacy officer through our contact form.'

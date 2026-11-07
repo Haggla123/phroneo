@@ -115,7 +115,7 @@ function FormShell({ kind, extra, withAge, withMessage, requireName = true, requ
         />
       </Field>
       {withAge && (
-        <Field id={id('age')} label={t('form.age') + ' (18–30) *'} error={err.age}>
+        <Field id={id('age')} label={t('form.age') + ' (18-30) *'} error={err.age}>
           <input
             {...ap('age')}
             type="number"
